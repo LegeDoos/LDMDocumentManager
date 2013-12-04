@@ -1,0 +1,11 @@
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.csprojResolveAssemblyReference.cache
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LegeDoos.LDM.About.resources
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDM.Main.resources
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LegeDoos.LDM.Preferences.resources
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LegeDoos.LDM.Properties.Resources.resources
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.csproj.GenerateResource.Cache
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LDMDocumentManager.exe.config
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LDMDocumentManager.exe
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LDMDocumentManager.pdb
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.exe
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.pdb

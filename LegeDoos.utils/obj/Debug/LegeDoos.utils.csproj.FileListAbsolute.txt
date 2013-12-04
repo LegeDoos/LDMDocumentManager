@@ -1,0 +1,5 @@
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LegeDoos.utils\bin\Debug\LegeDoos.Utils.dll
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LegeDoos.utils\bin\Debug\LegeDoos.Utils.pdb
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LegeDoos.utils\obj\Debug\LegeDoos.utils.csprojResolveAssemblyReference.cache
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LegeDoos.utils\obj\Debug\LegeDoos.Utils.dll
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LegeDoos.utils\obj\Debug\LegeDoos.Utils.pdb
