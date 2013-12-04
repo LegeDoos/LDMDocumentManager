@@ -9,3 +9,5 @@ C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocument
 C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LDMDocumentManager.pdb
 C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.exe
 C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\obj\Debug\LDMDocumentManager.pdb
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LegeDoos.Utils.dll
+C:\Users\rcilissen\CloudStation\Prive\Development\LDMDocumentManager\LDMDocumentManager\bin\Debug\LegeDoos.Utils.pdb

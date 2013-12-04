@@ -11,16 +11,16 @@ using LegeDoos.LDM;
 
 namespace LDM
 {
-
-
     public partial class Main : Form
     {
         public GlobalSettings m_GlobalSettings { get; set; }
+        private FileManager m_FileManager = null;
 
         public Main()
         {
             InitializeComponent();
             m_GlobalSettings = new GlobalSettings();
+            m_FileManager = new FileManager();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace LDM
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open");
+            m_FileManager.AddFilesOpenDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
