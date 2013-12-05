@@ -36,6 +36,7 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFromSourceDirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.openFromSourceDirToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
@@ -87,6 +89,12 @@
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // openFromSourceDirToolStripMenuItem
+            // 
+            this.openFromSourceDirToolStripMenuItem.Name = "openFromSourceDirToolStripMenuItem";
+            resources.ApplyResources(this.openFromSourceDirToolStripMenuItem, "openFromSourceDirToolStripMenuItem");
+            this.openFromSourceDirToolStripMenuItem.Click += new System.EventHandler(this.openFromSourceDirToolStripMenuItem_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -111,6 +119,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFromSourceDirToolStripMenuItem;
     }
 }
 

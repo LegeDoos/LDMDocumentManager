@@ -49,5 +49,10 @@ namespace LDM
             Preferences PreferencesForm = new Preferences();
             PreferencesForm.ShowDialog();
         }
+
+        private void openFromSourceDirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_FileManager.AddFilesFromSourceDir();
+        }
     }
 }
