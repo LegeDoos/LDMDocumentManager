@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegeDoos.utils", "LegeDoos.utils\LegeDoos.utils.csproj", "{2DD3DAE1-6C74-4D2D-BD1A-497C5A61E047}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegeDoos.Utils", "LegeDoos.utils\LegeDoos.Utils.csproj", "{2DD3DAE1-6C74-4D2D-BD1A-497C5A61E047}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDMDocumentManager", "LDMDocumentManager\LDMDocumentManager.csproj", "{91B1B362-E537-4980-AC2F-83B09395955F}"
 EndProject

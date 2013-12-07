@@ -63,7 +63,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySortableBindingList.cs" />
     <Compile Include="Preferences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,9 +106,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LegeDoos.utils\LegeDoos.utils.csproj">
+    <ProjectReference Include="..\LegeDoos.utils\LegeDoos.Utils.csproj">
       <Project>{2dd3dae1-6c74-4d2d-bd1a-497c5a61e047}</Project>
-      <Name>LegeDoos.utils</Name>
+      <Name>LegeDoos.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
