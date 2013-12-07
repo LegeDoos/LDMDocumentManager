@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,31 @@ namespace LegeDoos.LDM
 {
     class FileManager
     {
-        public List<TheFile> TheFileList = null;
+        public MySortableBindingList<TheFile> TheFileList { get; private set; }
+        private DataGridView m_FileListDataGridView = null;
 
-        public FileManager()
+        //BindingList<TheFile> bTheFileList = new BindingList<TheFile>();
+        
+
+        /// <summary>
+        /// Constructor accepts DataGridView to show the file list in
+        /// </summary>
+        /// <param name="_dataGridViewFileList"></param>
+        public FileManager(DataGridView _dataGridViewFileList)
         {
             InitList();
+            m_FileListDataGridView = _dataGridViewFileList;
         }
 
         public void InitList()
         {
-            TheFileList = new List<TheFile>();
+            TheFileList = new MySortableBindingList<TheFile>();
+        }
+
+        private void InitGridView()
+        {
+            m_FileListDataGridView.DataSource = TheFileList;
+            m_FileListDataGridView.Sort(m_FileListDataGridView.Columns["CreatedDateTime"], ListSortDirection.Ascending);
         }
 
         public Boolean AddFileToList(string FileName)
@@ -65,6 +81,7 @@ namespace LegeDoos.LDM
                 {
                     AddFilesToList(FileDialog.FileNames);
                 }
+                InitGridView();
             }
         }
 
@@ -79,6 +96,7 @@ namespace LegeDoos.LDM
                     {
                         AddFileToList(File);
                     }
+                    InitGridView();
                 }
                 else 
                 {
@@ -91,6 +109,7 @@ namespace LegeDoos.LDM
         {
             if (TheFileList != null)
             {
+                InitGridView();
             }
         }
 

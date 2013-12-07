@@ -20,7 +20,7 @@ namespace LDM
         {
             InitializeComponent();
             m_GlobalSettings = new GlobalSettings();
-            m_FileManager = new FileManager();
+            m_FileManager = new FileManager(dataGridViewFileList);
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -53,6 +53,11 @@ namespace LDM
         private void openFromSourceDirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             m_FileManager.AddFilesFromSourceDir();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -16,6 +16,7 @@ namespace LegeDoos.LDM
         public string TheFileName { get; private set; }
         public string TheExtension { get; private set; }
         public string CreatedDate { get; private set; }
+        public DateTime CreatedDateTime { get; private set; }
 
         public TheFile(string FileName)
         {
@@ -35,7 +36,9 @@ namespace LegeDoos.LDM
             ThePath = Path.GetDirectoryName(m_PathAndFileName);
             TheFileName = Path.GetFileName(m_PathAndFileName);
             TheExtension = Path.GetExtension(m_PathAndFileName);
-            CreatedDate = StringManagement.DateToString(File.GetCreationTimeUtc(m_PathAndFileName));
+            CreatedDateTime = File.GetCreationTimeUtc(m_PathAndFileName);
+            CreatedDate = StringManagement.DateToString(CreatedDateTime);
+            
         }
     }
 }

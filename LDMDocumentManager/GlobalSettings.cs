@@ -32,8 +32,13 @@ namespace LegeDoos.LDM
 
         public void ReloadSettings()
         {
+#if DEBUG
+            SourcePath = @"\\192.168.2.7\usbstorage\EPSCAN\001";
+            DestPath = @"d:\b";
+#else
             SourcePath = Properties.Settings.Default.SourcePath;
             DestPath = Properties.Settings.Default.DestinationPath;
+#endif
             LastStaticDate = Properties.Settings.Default.LastStaticDate;
         }
 
