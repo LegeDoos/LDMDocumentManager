@@ -26,6 +26,7 @@ namespace LegeDoos.LDM
         {
             InitList();
             m_FileListDataGridView = _dataGridViewFileList;
+            m_FileListDataGridView.SelectionChanged += new System.EventHandler(this.FileListSelectionChanged);
         }
 
         public void InitList()
@@ -127,5 +128,21 @@ namespace LegeDoos.LDM
                 }
             }
         }
+        
+        private void FileListSelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView DGVLocal = sender as DataGridView;
+            string tst = "";
+            TheFile item;
+
+            foreach (DataGridViewRow r in DGVLocal.SelectedRows)
+            {
+                item = r.DataBoundItem as TheFile;
+                tst = string.Format("{0} : {1}", tst, item.TheFileName); 
+            }
+
+            MessageBox.Show(tst);
+        }
+        
     }
 }

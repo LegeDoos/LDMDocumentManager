@@ -381,9 +381,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>859, 519</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Document Manager</value>
   </data>
@@ -429,16 +426,16 @@
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
-    <value>CreatedDateTime</value>
-  </data>
-  <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>theFileNameDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
+    <value>CreatedDateTime</value>
+  </data>
+  <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Name" xml:space="preserve">

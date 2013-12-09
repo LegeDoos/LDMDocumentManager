@@ -42,8 +42,8 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
-            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,6 +149,13 @@
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // theFileNameDataGridViewTextBoxColumn
+            // 
+            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
+            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
+            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
+            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // CreatedDateTime
             // 
             this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -156,13 +163,6 @@
             resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
             this.CreatedDateTime.Name = "CreatedDateTime";
             this.CreatedDateTime.ReadOnly = true;
-            // 
-            // theFileNameDataGridViewTextBoxColumn
-            // 
-            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
-            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
-            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
-            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // createdDateDataGridViewTextBoxColumn
             // 
