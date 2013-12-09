@@ -33,8 +33,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFromSourceDirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,12 +42,12 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
-            this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
@@ -80,17 +80,17 @@
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // openFromSourceDirToolStripMenuItem
             // 
             this.openFromSourceDirToolStripMenuItem.Name = "openFromSourceDirToolStripMenuItem";
             resources.ApplyResources(this.openFromSourceDirToolStripMenuItem, "openFromSourceDirToolStripMenuItem");
             this.openFromSourceDirToolStripMenuItem.Click += new System.EventHandler(this.openFromSourceDirToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -132,7 +132,10 @@
             // dataGridViewFileList
             // 
             this.dataGridViewFileList.AllowUserToAddRows = false;
+            this.dataGridViewFileList.AllowUserToDeleteRows = false;
+            this.dataGridViewFileList.AllowUserToResizeRows = false;
             this.dataGridViewFileList.AutoGenerateColumns = false;
+            this.dataGridViewFileList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.theFileNameDataGridViewTextBoxColumn,
@@ -146,17 +149,6 @@
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // theFileBindingSource
-            // 
-            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
-            // 
-            // theFileNameDataGridViewTextBoxColumn
-            // 
-            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
-            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
-            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
-            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // CreatedDateTime
             // 
             this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -164,6 +156,13 @@
             resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
             this.CreatedDateTime.Name = "CreatedDateTime";
             this.CreatedDateTime.ReadOnly = true;
+            // 
+            // theFileNameDataGridViewTextBoxColumn
+            // 
+            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
+            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
+            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
+            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // createdDateDataGridViewTextBoxColumn
             // 
@@ -186,6 +185,10 @@
             resources.ApplyResources(this.theExtensionDataGridViewTextBoxColumn, "theExtensionDataGridViewTextBoxColumn");
             this.theExtensionDataGridViewTextBoxColumn.Name = "theExtensionDataGridViewTextBoxColumn";
             this.theExtensionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // theFileBindingSource
+            // 
+            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
             // 
             // Main
             // 

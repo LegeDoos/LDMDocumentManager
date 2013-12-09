@@ -12,7 +12,7 @@ namespace LegeDoos.LDM
 {
     class FileManager
     {
-        public MySortableBindingList<TheFile> TheFileList { get; private set; }
+        public List<TheFile> TheFileList { get; private set; }
         private DataGridView m_FileListDataGridView = null;
 
         //BindingList<TheFile> bTheFileList = new BindingList<TheFile>();
@@ -30,13 +30,12 @@ namespace LegeDoos.LDM
 
         public void InitList()
         {
-            TheFileList = new MySortableBindingList<TheFile>();
+            TheFileList = new List<TheFile>();
         }
 
         private void InitGridView()
         {
-            m_FileListDataGridView.DataSource = TheFileList;
-            m_FileListDataGridView.Sort(m_FileListDataGridView.Columns["CreatedDateTime"], ListSortDirection.Ascending);
+            m_FileListDataGridView.DataSource = TheFileList.OrderBy(TheFile => TheFile.CreatedDateTime).ToList();
         }
 
         public Boolean AddFileToList(string FileName)
