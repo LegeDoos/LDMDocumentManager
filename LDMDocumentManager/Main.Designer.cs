@@ -44,8 +44,9 @@
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
             this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
-            this.btnApply = new System.Windows.Forms.Button();
             this.panelActionsSelected = new System.Windows.Forms.Panel();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveAllChanges = new System.Windows.Forms.Button();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,6 @@
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
@@ -61,9 +61,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
             this.tableLayoutRight.SuspendLayout();
             this.panelActionsSelected.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.panelActionsAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -159,6 +159,7 @@
             resources.ApplyResources(this.dataGridViewFileList, "dataGridViewFileList");
             this.dataGridViewFileList.Name = "dataGridViewFileList";
             this.dataGridViewFileList.ReadOnly = true;
+            this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CreatedDateTime
@@ -176,17 +177,25 @@
             this.tableLayoutRight.Controls.Add(this.pictureBoxPreview, 0, 0);
             this.tableLayoutRight.Name = "tableLayoutRight";
             // 
-            // btnApply
-            // 
-            resources.ApplyResources(this.btnApply, "btnApply");
-            this.btnApply.Name = "btnApply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            // 
             // panelActionsSelected
             // 
             this.panelActionsSelected.Controls.Add(this.btnApply);
             resources.ApplyResources(this.panelActionsSelected, "panelActionsSelected");
             this.panelActionsSelected.Name = "panelActionsSelected";
+            // 
+            // btnApply
+            // 
+            resources.ApplyResources(this.btnApply, "btnApply");
+            this.btnApply.Name = "btnApply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.TabStop = false;
             // 
             // panelActionsAll
             // 
@@ -233,13 +242,6 @@
             // 
             this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
             // 
-            // pictureBoxPreview
-            // 
-            this.pictureBoxPreview.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
-            this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.TabStop = false;
-            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -257,9 +259,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
             this.tableLayoutRight.ResumeLayout(false);
             this.panelActionsSelected.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.panelActionsAll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

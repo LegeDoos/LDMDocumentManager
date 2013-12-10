@@ -60,6 +60,17 @@ namespace LDM
 
         }
 
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            string txt;
+            if (m_FileManager.MainSelectedFile != null)
+                txt = m_FileManager.MainSelectedFile.TheFileName;
+            else
+                txt = "Nothing";
+            MessageBox.Show(txt);
+
+        }
+
 
     }
 }

@@ -369,6 +369,9 @@
   <data name="pictureBoxPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="pictureBoxPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pictureBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>

@@ -14,9 +14,9 @@ namespace LegeDoos.LDM
     {
         public List<TheFile> TheFileList { get; private set; }
         private DataGridView m_FileListDataGridView = null;
+        public List<TheFile> SelectedFiles { get; private set; }
+        public TheFile MainSelectedFile { get; private set; }
 
-        //BindingList<TheFile> bTheFileList = new BindingList<TheFile>();
-        
 
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
@@ -27,6 +27,7 @@ namespace LegeDoos.LDM
             InitList();
             m_FileListDataGridView = _dataGridViewFileList;
             m_FileListDataGridView.SelectionChanged += new System.EventHandler(this.FileListSelectionChanged);
+
         }
 
         public void InitList()
@@ -128,20 +129,34 @@ namespace LegeDoos.LDM
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Handle the change of selection in the grid with files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FileListSelectionChanged(object sender, EventArgs e)
         {
-            DataGridView DGVLocal = sender as DataGridView;
-            string tst = "";
             TheFile item;
 
-            foreach (DataGridViewRow r in DGVLocal.SelectedRows)
+            //fill list of selected items
+            SelectedFiles = new List<TheFile>();
+            foreach (DataGridViewRow r in m_FileListDataGridView.SelectedRows)
             {
                 item = r.DataBoundItem as TheFile;
-                tst = string.Format("{0} : {1}", tst, item.TheFileName); 
+                SelectedFiles.Add(item);
             }
 
-            MessageBox.Show(tst);
+            if (SelectedFiles.Count == 0)
+                return;
+
+            SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ToList();
+            //determine main image (first created)
+            MainSelectedFile = SelectedFiles.FirstOrDefault();
+
+            //load image
+
+            //load values
         }
         
     }
