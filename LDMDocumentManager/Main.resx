@@ -210,6 +210,9 @@
   <data name="tableLayoutPanelBack.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableLayoutPanelLeftRight.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
+    <value>Single</value>
+  </data>
   <data name="tableLayoutPanelLeftRight.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -259,10 +262,10 @@
     <value>Fill</value>
   </data>
   <data name="dataGridViewFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
+    <value>3, 3</value>
   </data>
   <data name="dataGridViewFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 407</value>
+    <value>288, 425</value>
   </data>
   <data name="dataGridViewFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -283,13 +286,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanelFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
   </data>
   <data name="tableLayoutPanelFileList.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanelFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 433</value>
+    <value>294, 431</value>
   </data>
   <data name="tableLayoutPanelFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -307,7 +310,115 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelFileList.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGridViewFileList" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,20,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGridViewFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,431" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tableLayoutRight.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 12</value>
+  </data>
+  <data name="btnApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="btnApply.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Apply to selected</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Name" xml:space="preserve">
+    <value>btnApply</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
+    <value>panelActionsSelected</value>
+  </data>
+  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelActionsSelected.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 383</value>
+  </data>
+  <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 45</value>
+  </data>
+  <data name="panelActionsSelected.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelActionsSelected.Name" xml:space="preserve">
+    <value>panelActionsSelected</value>
+  </data>
+  <data name="&gt;&gt;panelActionsSelected.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelActionsSelected.Parent" xml:space="preserve">
+    <value>tableLayoutRight</value>
+  </data>
+  <data name="&gt;&gt;panelActionsSelected.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBoxPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>538, 184</value>
+  </data>
+  <data name="pictureBoxPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Name" xml:space="preserve">
+    <value>pictureBoxPreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Parent" xml:space="preserve">
+    <value>tableLayoutRight</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 4</value>
+  </data>
+  <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>544, 431</value>
+  </data>
+  <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutRight.Name" xml:space="preserve">
+    <value>tableLayoutRight</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutRight.Parent" xml:space="preserve">
+    <value>tableLayoutPanelLeftRight</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutRight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panelActionsSelected" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pictureBoxPreview" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,50,Percent,50,Absolute,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanelLeftRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -337,7 +448,61 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,300,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,300,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="btnSaveAllChanges.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveAllChanges.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 12</value>
+  </data>
+  <data name="btnSaveAllChanges.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="btnSaveAllChanges.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSaveAllChanges.Text" xml:space="preserve">
+    <value>Archive all files</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAllChanges.Name" xml:space="preserve">
+    <value>btnSaveAllChanges</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAllChanges.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAllChanges.Parent" xml:space="preserve">
+    <value>panelActionsAll</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAllChanges.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelActionsAll.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="panelActionsAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="panelActionsAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 448</value>
+  </data>
+  <data name="panelActionsAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 44</value>
+  </data>
+  <data name="panelActionsAll.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelActionsAll.Name" xml:space="preserve">
+    <value>panelActionsAll</value>
+  </data>
+  <data name="&gt;&gt;panelActionsAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelActionsAll.Parent" xml:space="preserve">
+    <value>tableLayoutPanelBack</value>
+  </data>
+  <data name="&gt;&gt;panelActionsAll.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tableLayoutPanelBack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -367,7 +532,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelBack.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelLeftRight" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelLeftRight" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelActionsAll" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -426,16 +591,16 @@
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>theFileNameDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
     <value>CreatedDateTime</value>
   </data>
   <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>theFileNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Name" xml:space="preserve">

@@ -42,18 +42,28 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
-            this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.panelActionsSelected = new System.Windows.Forms.Panel();
+            this.panelActionsAll = new System.Windows.Forms.Panel();
+            this.btnSaveAllChanges = new System.Windows.Forms.Button();
+            this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
             this.tableLayoutPanelFileList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
+            this.tableLayoutRight.SuspendLayout();
+            this.panelActionsSelected.SuspendLayout();
+            this.panelActionsAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,18 +125,20 @@
             // 
             resources.ApplyResources(this.tableLayoutPanelBack, "tableLayoutPanelBack");
             this.tableLayoutPanelBack.Controls.Add(this.tableLayoutPanelLeftRight, 0, 0);
+            this.tableLayoutPanelBack.Controls.Add(this.panelActionsAll, 0, 1);
             this.tableLayoutPanelBack.Name = "tableLayoutPanelBack";
             // 
             // tableLayoutPanelLeftRight
             // 
             resources.ApplyResources(this.tableLayoutPanelLeftRight, "tableLayoutPanelLeftRight");
             this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutPanelFileList, 0, 0);
+            this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutRight, 1, 0);
             this.tableLayoutPanelLeftRight.Name = "tableLayoutPanelLeftRight";
             // 
             // tableLayoutPanelFileList
             // 
             resources.ApplyResources(this.tableLayoutPanelFileList, "tableLayoutPanelFileList");
-            this.tableLayoutPanelFileList.Controls.Add(this.dataGridViewFileList, 0, 1);
+            this.tableLayoutPanelFileList.Controls.Add(this.dataGridViewFileList, 0, 0);
             this.tableLayoutPanelFileList.Name = "tableLayoutPanelFileList";
             // 
             // dataGridViewFileList
@@ -149,13 +161,6 @@
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // theFileNameDataGridViewTextBoxColumn
-            // 
-            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
-            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
-            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
-            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // CreatedDateTime
             // 
             this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -163,6 +168,44 @@
             resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
             this.CreatedDateTime.Name = "CreatedDateTime";
             this.CreatedDateTime.ReadOnly = true;
+            // 
+            // tableLayoutRight
+            // 
+            resources.ApplyResources(this.tableLayoutRight, "tableLayoutRight");
+            this.tableLayoutRight.Controls.Add(this.panelActionsSelected, 0, 2);
+            this.tableLayoutRight.Controls.Add(this.pictureBoxPreview, 0, 0);
+            this.tableLayoutRight.Name = "tableLayoutRight";
+            // 
+            // btnApply
+            // 
+            resources.ApplyResources(this.btnApply, "btnApply");
+            this.btnApply.Name = "btnApply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            // 
+            // panelActionsSelected
+            // 
+            this.panelActionsSelected.Controls.Add(this.btnApply);
+            resources.ApplyResources(this.panelActionsSelected, "panelActionsSelected");
+            this.panelActionsSelected.Name = "panelActionsSelected";
+            // 
+            // panelActionsAll
+            // 
+            this.panelActionsAll.Controls.Add(this.btnSaveAllChanges);
+            resources.ApplyResources(this.panelActionsAll, "panelActionsAll");
+            this.panelActionsAll.Name = "panelActionsAll";
+            // 
+            // btnSaveAllChanges
+            // 
+            resources.ApplyResources(this.btnSaveAllChanges, "btnSaveAllChanges");
+            this.btnSaveAllChanges.Name = "btnSaveAllChanges";
+            this.btnSaveAllChanges.UseVisualStyleBackColor = true;
+            // 
+            // theFileNameDataGridViewTextBoxColumn
+            // 
+            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
+            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
+            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
+            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // createdDateDataGridViewTextBoxColumn
             // 
@@ -190,6 +233,13 @@
             // 
             this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
             // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.TabStop = false;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -205,7 +255,11 @@
             this.tableLayoutPanelLeftRight.ResumeLayout(false);
             this.tableLayoutPanelFileList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
+            this.tableLayoutRight.ResumeLayout(false);
+            this.panelActionsSelected.ResumeLayout(false);
+            this.panelActionsAll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +285,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutRight;
+        private System.Windows.Forms.Panel panelActionsSelected;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Panel panelActionsAll;
+        private System.Windows.Forms.Button btnSaveAllChanges;
+        private System.Windows.Forms.PictureBox pictureBoxPreview;
     }
 }
 
