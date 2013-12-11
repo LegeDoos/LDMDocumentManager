@@ -186,7 +186,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>859, 24</value>
+    <value>1068, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -214,7 +214,7 @@
     <value>Single</value>
   </data>
   <data name="tableLayoutPanelLeftRight.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanelFileList.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -265,7 +265,7 @@
     <value>3, 3</value>
   </data>
   <data name="dataGridViewFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 425</value>
+    <value>308, 595</value>
   </data>
   <data name="dataGridViewFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanelFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 431</value>
+    <value>314, 601</value>
   </data>
   <data name="tableLayoutPanelFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -310,7 +310,198 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelFileList.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGridViewFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,431" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGridViewFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,601" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 17</value>
+  </metadata>
+  <data name="btnPrevious.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ8SURBVHhe7d1NqKVzHMDx42WYyCBKMaFEmDCbSRSxkLzs
+        lCxENjaSBZOthQVKaBDJUFbCBhGLkYXNpDAob2lSg5C38TYx+P5O7jDX75577znPy///nO+3PjXdOffc
+        en5nmv89z/P8z8jMzMzMzMzMzMzMzMzMzMysgjbgEXyIb/HNP39+GJtgA+1QPIS9+GsJf2Ir1sIG1Hps
+        Rzb0zDbEC8YG0EbsQjboSbbAKu8K/IhswMv5A2fAKu02xBCz4a7UfbDKiv+7n0A20NXaAauoE/EWsmFO
+        Yzesks7GTmSDnIVV0LX4FdkAZ2UFdyDuQryBkw2vCVZoh+EZZENrkhVYLPbeRjawpllhnYvPkQ2rDVZQ
+        1+E3ZINqixVQF4u9pVjPrcOLyIbTBeuxk/AOssF0xXrqQnyNbChdsh66Hl0v9pZiHRaLvQeQDaIv1lGx
+        2HsJ2RD6ZB10MuLcezaAvlnLXYS4NDs7+CWwFrsBe5Ad+FJYCx2E0hZ7S7GGOxIvIzvYJbIGOw1xG1Z2
+        oEtlDXUxSl7sLcUa6Cb8juwAl85m6GA8iuzA1sKm7Ci8guyg1sSmKE7jdnXNnmYTZ1zfxb04EzN3Pr5E
+        9sNUtriX8n6swVSVdBpX04v3aVb1IojTuHcjezLV6UGsqCPwPLInUb1WtD/C6fgY2ROofhP3R7gAXyH7
+        Rg1D/HaQdgtm3X1D5YvtdfbrAMQNGtmDNUz7iq1Xnkb2IA3XuLiA4wVkD9CwjbsT2V9q+EbnwAXf/Bo9
+        tugLmi+jjxZ9QfOltd23VAdfAHOuuqt41azxJ2lkf6H5MN6C1V8D59c43wiaX+PiJFBTW7CrLvuKk0HP
+        InuQhmu/PB08f9JuhQvD4fvfBSH/7XL8gOwbNQzvYWKn4H1k36z63YNlOwavIXsC1Svu5o6rvldU3EUS
+        n8ebPZHqtKJ//Yu7GbXuA6B/xX6NcWv/VF2C+FTu7IlVtvjNbqabQxeqcS+geRWn+2O139jt4QsdjVeR
+        /dCa2AzFO4d3IDuwtbAGuga/IDvApbOGOg9fIDvIJbMGOwFvIjvQpbKGOxzPITvYJbIWisXh7ejjY+BW
+        y1rsavyM7MCXwlpuIz5DdvBLYB10PLYjG0DfrKPW4ilkQ+iTddjC4nAvsmH0wXroKvyEbCBds56KO5J2
+        IhtKl6zHjsXryAbTFeu5uCHlSWTD6YIVUmxO2cfi0ArqMnyPbFBtscI6C58iG1YbrMC6vBfBCu0QPI5s
+        aE2ywrsRbd6LYBV0Kb5DNsBZWSWdig+QDXEWVlHH4Q1kg5zGblhlNfnO4Q5YpW3GrLuYTPzQJCu/KxHb
+        nGTDXU68eJb92DQrv7jmcBeyIU+yBTaQ1mM1i8NtiLWEDai45z22uJv0plHcp7AVcX2iDbQNiO1sYv+C
+        PYgPu/4EsSn2JpiZmZmZmZmZmZmZmZmZmZkNuNHobyndgBK4IJSLAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnPrevious.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="btnPrevious.Text" xml:space="preserve">
+    <value>Previous image from selected</value>
+  </data>
+  <data name="btnNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARcSURBVHhe7d1NiFVlHMfxsTTTMIXERVIpYWSZtjEixGih
+        EC5FaGFJmzYFQQVtA8FqoVgJ0aKENi2sjRDVJhFcGC0q36XoBaSiosLMF9Tq9x9MGPzNzJ25zznneZ7z
+        /cIHxHPnDjx/dM6ce15GiIiIiIiIiIiIiIiIiIiIiHrQanlTTspv8vuVP8ff3SNUaXNkt/wj/47jkuyS
+        2UIVFQPdJ27ozkFZLFRJ8a/aDXoip2SVUOHFz/XL4oY8mdOyQajgdoob7qBiv+B5oUI7LG6wU/WO3CBU
+        WGfEDXQ6vpDbhArKDXIY38l9QoXkhjisc7JZqIDcAFOIA0qvyHVCGeeGl9IemSuUaW5oqX0ptwtlmBtY
+        E36UB4Qyyw2rKeflcaGMcoNqEjuHmeWG1Ib35SahjnPDactXcodQh7nBtOlXWSvUUW4obYudwy1CHeQG
+        0pXXhJ3DlnOD6NKHcrNQS7khdO2QLBFqITeAHMTO4cNCDecWPxcX5EmhBnMLn5vYObxeqIHcgufoI5kv
+        lDi32LmKE1iXCiXMLXTO4nrFR4QS5RY5dxflaaEEuQUuxVsyU2iI3MKW5GNZIMm6V3bIEYmDEe6bIi9J
+        zjmcJW9IXOvmvgny9rM8JNMqrmn7RNwboxzxsfITMuXi9ifuDVGmV2Xgj5XjZz7/7ddnr8yTSXtd3Bug
+        fF/L3TJhx8R9Merwi6yRcftL3BeiHnHk8FmxuS9AnV6WGTIm90LU6z0Zcysb9yLULX5DuHqCiXsB6rdV
+        RnMbUb849jN6LyO3Ef0QHyfbDeiH42I3oB/Oit2Afvhb7Ab0Q3wMYDegH+I2+XYD6he/Bq4QuxH140BQ
+        j8Wt7a9+KORegHrFrWv5MKin4v6E13wcnPKBCchT7PA9JzZOCavbn/KojNt2cV+I8h2VO2XC4rFpcc6Y
+        ewOU61O5RQYqrgV0b4IyxYU+canfwMWL4ypT92YoR/xP/oxMKy4OLVs85XydDN3/l4fHDkQ8/cp9M+Tl
+        hNwlNI3cgpYkrupOeoOIvuUWtRQvyTVH9mhquYXNXZzK9ZhQgtwC5+wneVAoUW6Rc/W5LBZKmFvoHH0g
+        PGSqgdxi5yQeM/eisLPXUG7RcxGnbW8SajC38Dn4Qe4Xaji3+F37TG4VaiE3gC69KzcKtZQbQhcuCzt7
+        HeSG0bY4L3OjUAe5gbTpe1kp1FFuKG3ZLwuFOswNpg27ZbZQx7nhNCl29sa9aSO1nxtSUyY9R5/azw2q
+        Cd/K6OXYlFduWKntk4HP0ad2cwNL6W0ZczUu5ZUbWgpxjv5TQpnnhjesP2S9UAG5AQ4jbr64TKiQUt4f
+        4YAsEiqoeCK3G+ZUcWSv0HaKG+ig4lrKF4QKLe6PEIdn3XAnc1o2CBVe3DHTDXgip2SVUAXFz+44WucG
+        7cTOHhdoVNYciR25OA/fDT3EwZ1twjP7K261xC1WvpF4GPMFOXnl75YLERERERERERERERERERERUcaN
+        jPwHoTd/5d+uxdAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnNext.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="btnNext.Text" xml:space="preserve">
+    <value>Next image from selected</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="btnRotate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJFSURBVDhPtZHfT5JhFMfZuvKP8IKL2rStsTZzrVari1pj
+        0WZCmZgmzUaugsyK8UNyEigwIHBS4HBQGjhTwPnCpBSzVuoCSXMFFSJXXbVlL+BF33jhXb+TddFne7Zz
+        zs75Pt/nPIz/hsBXd53r4W6h03+HP1QTOz7AttNpaYSBpvKz/npRwzCPOOXifBD7hWgdEeCQfr+Rbvk7
+        LUTD7mbfyTH5wzZon3TCPK+FZV4H3TMV+A4edkl3dtGtvyMMnCg/M8od08x2oD9qgWFODcNzNeTT7VA9
+        VqC2jwOWqLJHPrjGpkd+pnGEJ5IERbBFzOhd0EMzo4TQ04xrhBg1lqPYcanCTPVJB9NxsTtVVhj6EZ6L
+        Q6imZQXbqrAC+zqqU9VSloF1pTK2/cI2B92WF1iD5F5KQaffOXb7MI6YDuCgZg/2KqtQJWEZqHpF61Yp
+        g8v49o2Su6u4antFtjmTTLpUmjvhDNMySXqpuN2ZhHk8DVF/opBvivvpl7K+R6TCEvhIGoOfQdUuO97B
+        TqRx434SQuvrPy+Uwh7Osq2T6/EHC1mEXm5AN7FeELhoT8A0uoru4SRaTCvxWv0vC3Xm7drCpNczlwWx
+        mENoKQcimkP3eFHgvPUNNO73UA29hcyZQKMhVlwoZdcxm1XY8nb9kRymljcQjOUwkY/9L3K46ftUEDjX
+        uwKlKwHZQLxw+J2LJF8bZTIcM9m4PZyBdSoDS4gE9WbKNnUzNdzlLQoIbi2jybiE0/oY6rWLqOuJgqeO
+        lF7o5jAYXwG//0vXhA2CNAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnRotate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnRotate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="btnRotate.Text" xml:space="preserve">
+    <value>Rotate image (only preview)</value>
+  </data>
+  <data name="btnRotate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="labelImageName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="labelImageName.Text" xml:space="preserve">
+    <value>toolStripLabel1</value>
+  </data>
+  <data name="labelImageName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 25</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>Image Name</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>panelImagePreview</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBoxPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBoxPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 601</value>
+  </data>
+  <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBoxPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Name" xml:space="preserve">
+    <value>pictureBoxPreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.Parent" xml:space="preserve">
+    <value>panelImagePreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelImagePreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelImagePreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 4</value>
+  </data>
+  <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 601</value>
+  </data>
+  <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelImagePreview.Name" xml:space="preserve">
+    <value>panelImagePreview</value>
+  </data>
+  <data name="&gt;&gt;panelImagePreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelImagePreview.Parent" xml:space="preserve">
+    <value>tableLayoutPanelLeftRight</value>
+  </data>
+  <data name="&gt;&gt;panelImagePreview.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tableLayoutRight.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -346,10 +537,10 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 383</value>
+    <value>125, 554</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 45</value>
+    <value>200, 44</value>
   </data>
   <data name="panelActionsSelected.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -366,44 +557,17 @@
   <data name="&gt;&gt;panelActionsSelected.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pictureBoxPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pictureBoxPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 184</value>
-  </data>
-  <data name="pictureBoxPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPreview.Name" xml:space="preserve">
-    <value>pictureBoxPreview</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPreview.Parent" xml:space="preserve">
-    <value>tableLayoutRight</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="tableLayoutRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 4</value>
+    <value>730, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 431</value>
+    <value>328, 601</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -418,10 +582,10 @@
     <value>tableLayoutPanelLeftRight</value>
   </data>
   <data name="&gt;&gt;tableLayoutRight.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panelActionsSelected" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pictureBoxPreview" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,50,Percent,50,Absolute,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panelActionsSelected" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,50,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanelLeftRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -433,7 +597,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanelLeftRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>853, 439</value>
+    <value>1062, 609</value>
   </data>
   <data name="tableLayoutPanelLeftRight.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -451,7 +615,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,300,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320,Percent,100,Absolute,334" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveAllChanges.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -487,7 +651,7 @@
     <value>NoControl</value>
   </data>
   <data name="panelActionsAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>656, 448</value>
+    <value>865, 618</value>
   </data>
   <data name="panelActionsAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 44</value>
@@ -517,7 +681,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanelBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>859, 495</value>
+    <value>1068, 665</value>
   </data>
   <data name="tableLayoutPanelBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -547,7 +711,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>859, 519</value>
+    <value>1068, 689</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Document Manager</value>
@@ -599,6 +763,42 @@
   </data>
   <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
+    <value>btnPrevious</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
+    <value>btnNext</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRotate.Name" xml:space="preserve">
+    <value>btnRotate</value>
+  </data>
+  <data name="&gt;&gt;btnRotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelImageName.Name" xml:space="preserve">
+    <value>labelImageName</value>
+  </data>
+  <data name="&gt;&gt;labelImageName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>theFileNameDataGridViewTextBoxColumn</value>

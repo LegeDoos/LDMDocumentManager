@@ -10,6 +10,8 @@ using LegeDoos.Utils;
 
 namespace LegeDoos.LDM
 {
+    public delegate void MainSelectedFileChange();
+
     class FileManager
     {
         public List<TheFile> TheFileList { get; private set; }
@@ -17,6 +19,7 @@ namespace LegeDoos.LDM
         public List<TheFile> SelectedFiles { get; private set; }
         public TheFile MainSelectedFile { get; private set; }
 
+        public event MainSelectedFileChange MainSelectedFileChangeEvent;
 
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
@@ -138,6 +141,7 @@ namespace LegeDoos.LDM
         private void FileListSelectionChanged(object sender, EventArgs e)
         {
             TheFile item;
+            string oldFileName = MainSelectedFile != null ? MainSelectedFile.TheFileName : "";
 
             //fill list of selected items
             SelectedFiles = new List<TheFile>();
@@ -154,10 +158,12 @@ namespace LegeDoos.LDM
             //determine main image (first created)
             MainSelectedFile = SelectedFiles.FirstOrDefault();
 
-            //load image
-
+            //trigger event so the new immage can be loaded
+            if (MainSelectedFile.TheFileName != oldFileName && MainSelectedFileChangeEvent != null)
+                MainSelectedFileChangeEvent();
+            
             //load values
         }
-        
+
     }
 }

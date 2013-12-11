@@ -43,10 +43,18 @@
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
             this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelImagePreview = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnPrevious = new System.Windows.Forms.ToolStripButton();
+            this.btnNext = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRotate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelImageName = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
             this.panelActionsSelected = new System.Windows.Forms.Panel();
             this.btnApply = new System.Windows.Forms.Button();
-            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveAllChanges = new System.Windows.Forms.Button();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +67,11 @@
             this.tableLayoutPanelLeftRight.SuspendLayout();
             this.tableLayoutPanelFileList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
+            this.panelImagePreview.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.tableLayoutRight.SuspendLayout();
             this.panelActionsSelected.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.panelActionsAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +142,8 @@
             // 
             resources.ApplyResources(this.tableLayoutPanelLeftRight, "tableLayoutPanelLeftRight");
             this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutPanelFileList, 0, 0);
-            this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutRight, 1, 0);
+            this.tableLayoutPanelLeftRight.Controls.Add(this.panelImagePreview, 1, 0);
+            this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutRight, 2, 0);
             this.tableLayoutPanelLeftRight.Name = "tableLayoutPanelLeftRight";
             // 
             // tableLayoutPanelFileList
@@ -170,11 +181,72 @@
             this.CreatedDateTime.Name = "CreatedDateTime";
             this.CreatedDateTime.ReadOnly = true;
             // 
+            // panelImagePreview
+            // 
+            this.panelImagePreview.Controls.Add(this.toolStrip1);
+            this.panelImagePreview.Controls.Add(this.pictureBoxPreview);
+            resources.ApplyResources(this.panelImagePreview, "panelImagePreview");
+            this.panelImagePreview.Name = "panelImagePreview";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPrevious,
+            this.btnNext,
+            this.toolStripSeparator1,
+            this.btnRotate,
+            this.toolStripSeparator2,
+            this.labelImageName});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Name = "toolStrip1";
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnPrevious, "btnPrevious");
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnNext, "btnNext");
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // btnRotate
+            // 
+            this.btnRotate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnRotate, "btnRotate");
+            this.btnRotate.Name = "btnRotate";
+            this.btnRotate.Click += new System.EventHandler(this.btnRotate_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // labelImageName
+            // 
+            this.labelImageName.Name = "labelImageName";
+            resources.ApplyResources(this.labelImageName, "labelImageName");
+            // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.TabStop = false;
+            // 
             // tableLayoutRight
             // 
             resources.ApplyResources(this.tableLayoutRight, "tableLayoutRight");
-            this.tableLayoutRight.Controls.Add(this.panelActionsSelected, 0, 2);
-            this.tableLayoutRight.Controls.Add(this.pictureBoxPreview, 0, 0);
+            this.tableLayoutRight.Controls.Add(this.panelActionsSelected, 0, 1);
             this.tableLayoutRight.Name = "tableLayoutRight";
             // 
             // panelActionsSelected
@@ -189,13 +261,6 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // pictureBoxPreview
-            // 
-            this.pictureBoxPreview.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
-            this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.TabStop = false;
             // 
             // panelActionsAll
             // 
@@ -257,9 +322,13 @@
             this.tableLayoutPanelLeftRight.ResumeLayout(false);
             this.tableLayoutPanelFileList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
+            this.panelImagePreview.ResumeLayout(false);
+            this.panelImagePreview.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.tableLayoutRight.ResumeLayout(false);
             this.panelActionsSelected.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.panelActionsAll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -293,6 +362,14 @@
         private System.Windows.Forms.Panel panelActionsAll;
         private System.Windows.Forms.Button btnSaveAllChanges;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
+        private System.Windows.Forms.Panel panelImagePreview;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnPrevious;
+        private System.Windows.Forms.ToolStripButton btnNext;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnRotate;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel labelImageName;
     }
 }
 
