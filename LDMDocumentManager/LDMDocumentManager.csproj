@@ -55,6 +55,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Document.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="GlobalSettings.cs" />
     <Compile Include="Main.cs">
