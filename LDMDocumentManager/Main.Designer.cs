@@ -40,11 +40,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelBack = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
-            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelImagePreview = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripPreview = new System.Windows.Forms.ToolStrip();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,7 +53,24 @@
             this.panelActionsSelected = new System.Windows.Forms.Panel();
             this.btnApply = new System.Windows.Forms.Button();
             this.panelActionsAll = new System.Windows.Forms.Panel();
-            this.btnSaveAllChanges = new System.Windows.Forms.Button();
+            this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
+            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
+            this.panelDocumentInfo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,14 +79,14 @@
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
-            this.tableLayoutPanelFileList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
             this.panelImagePreview.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.tableLayoutRight.SuspendLayout();
-            this.panelActionsSelected.SuspendLayout();
             this.panelActionsAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
+            this.tableLayoutPanelFileList.SuspendLayout();
+            this.panelDocumentInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,59 +160,24 @@
             this.tableLayoutPanelLeftRight.Controls.Add(this.tableLayoutRight, 2, 0);
             this.tableLayoutPanelLeftRight.Name = "tableLayoutPanelLeftRight";
             // 
-            // tableLayoutPanelFileList
-            // 
-            resources.ApplyResources(this.tableLayoutPanelFileList, "tableLayoutPanelFileList");
-            this.tableLayoutPanelFileList.Controls.Add(this.dataGridViewFileList, 0, 0);
-            this.tableLayoutPanelFileList.Name = "tableLayoutPanelFileList";
-            // 
-            // dataGridViewFileList
-            // 
-            this.dataGridViewFileList.AllowUserToAddRows = false;
-            this.dataGridViewFileList.AllowUserToDeleteRows = false;
-            this.dataGridViewFileList.AllowUserToResizeRows = false;
-            this.dataGridViewFileList.AutoGenerateColumns = false;
-            this.dataGridViewFileList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridViewFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.theFileNameDataGridViewTextBoxColumn,
-            this.CreatedDateTime,
-            this.createdDateDataGridViewTextBoxColumn,
-            this.thePathDataGridViewTextBoxColumn,
-            this.theExtensionDataGridViewTextBoxColumn});
-            this.dataGridViewFileList.DataSource = this.theFileBindingSource;
-            resources.ApplyResources(this.dataGridViewFileList, "dataGridViewFileList");
-            this.dataGridViewFileList.Name = "dataGridViewFileList";
-            this.dataGridViewFileList.ReadOnly = true;
-            this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CreatedDateTime
-            // 
-            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
-            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
-            this.CreatedDateTime.Name = "CreatedDateTime";
-            this.CreatedDateTime.ReadOnly = true;
-            // 
             // panelImagePreview
             // 
-            this.panelImagePreview.Controls.Add(this.toolStrip1);
+            this.panelImagePreview.Controls.Add(this.toolStripPreview);
             this.panelImagePreview.Controls.Add(this.pictureBoxPreview);
             resources.ApplyResources(this.panelImagePreview, "panelImagePreview");
             this.panelImagePreview.Name = "panelImagePreview";
             // 
-            // toolStrip1
+            // toolStripPreview
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripPreview.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPrevious,
             this.btnNext,
             this.toolStripSeparator1,
             this.btnRotate,
             this.toolStripSeparator2,
             this.labelImageName});
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.Name = "toolStrip1";
+            resources.ApplyResources(this.toolStripPreview, "toolStripPreview");
+            this.toolStripPreview.Name = "toolStripPreview";
             // 
             // btnPrevious
             // 
@@ -247,11 +226,11 @@
             // 
             resources.ApplyResources(this.tableLayoutRight, "tableLayoutRight");
             this.tableLayoutRight.Controls.Add(this.panelActionsSelected, 0, 1);
+            this.tableLayoutRight.Controls.Add(this.panelDocumentInfo, 0, 0);
             this.tableLayoutRight.Name = "tableLayoutRight";
             // 
             // panelActionsSelected
             // 
-            this.panelActionsSelected.Controls.Add(this.btnApply);
             resources.ApplyResources(this.panelActionsSelected, "panelActionsSelected");
             this.panelActionsSelected.Name = "panelActionsSelected";
             // 
@@ -264,15 +243,136 @@
             // 
             // panelActionsAll
             // 
-            this.panelActionsAll.Controls.Add(this.btnSaveAllChanges);
+            this.panelActionsAll.Controls.Add(this.btnSaveDocuments);
             resources.ApplyResources(this.panelActionsAll, "panelActionsAll");
             this.panelActionsAll.Name = "panelActionsAll";
             // 
-            // btnSaveAllChanges
+            // btnSaveDocuments
             // 
-            resources.ApplyResources(this.btnSaveAllChanges, "btnSaveAllChanges");
-            this.btnSaveAllChanges.Name = "btnSaveAllChanges";
-            this.btnSaveAllChanges.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnSaveDocuments, "btnSaveDocuments");
+            this.btnSaveDocuments.Name = "btnSaveDocuments";
+            this.btnSaveDocuments.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewFileList
+            // 
+            this.dataGridViewFileList.AllowUserToAddRows = false;
+            this.dataGridViewFileList.AllowUserToDeleteRows = false;
+            this.dataGridViewFileList.AllowUserToResizeRows = false;
+            this.dataGridViewFileList.AutoGenerateColumns = false;
+            this.dataGridViewFileList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewFileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.theFileNameDataGridViewTextBoxColumn,
+            this.CreatedDateTime,
+            this.createdDateDataGridViewTextBoxColumn,
+            this.thePathDataGridViewTextBoxColumn,
+            this.theExtensionDataGridViewTextBoxColumn});
+            this.dataGridViewFileList.DataSource = this.theFileBindingSource;
+            resources.ApplyResources(this.dataGridViewFileList, "dataGridViewFileList");
+            this.dataGridViewFileList.Name = "dataGridViewFileList";
+            this.dataGridViewFileList.ReadOnly = true;
+            this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewFileList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CreatedDateTime
+            // 
+            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
+            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
+            this.CreatedDateTime.Name = "CreatedDateTime";
+            this.CreatedDateTime.ReadOnly = true;
+            // 
+            // tableLayoutPanelFileList
+            // 
+            resources.ApplyResources(this.tableLayoutPanelFileList, "tableLayoutPanelFileList");
+            this.tableLayoutPanelFileList.Controls.Add(this.dataGridViewFileList, 0, 0);
+            this.tableLayoutPanelFileList.Name = "tableLayoutPanelFileList";
+            // 
+            // panelDocumentInfo
+            // 
+            this.panelDocumentInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDocumentInfo.Controls.Add(this.btnApply);
+            this.panelDocumentInfo.Controls.Add(this.textBox6);
+            this.panelDocumentInfo.Controls.Add(this.textBox5);
+            this.panelDocumentInfo.Controls.Add(this.textBox4);
+            this.panelDocumentInfo.Controls.Add(this.textBox3);
+            this.panelDocumentInfo.Controls.Add(this.label7);
+            this.panelDocumentInfo.Controls.Add(this.textBox2);
+            this.panelDocumentInfo.Controls.Add(this.label5);
+            this.panelDocumentInfo.Controls.Add(this.label6);
+            this.panelDocumentInfo.Controls.Add(this.textBox1);
+            this.panelDocumentInfo.Controls.Add(this.label3);
+            this.panelDocumentInfo.Controls.Add(this.label4);
+            this.panelDocumentInfo.Controls.Add(this.label2);
+            this.panelDocumentInfo.Controls.Add(this.label1);
+            resources.ApplyResources(this.panelDocumentInfo, "panelDocumentInfo");
+            this.panelDocumentInfo.Name = "panelDocumentInfo";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // textBox3
+            // 
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            // 
+            // textBox4
+            // 
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // textBox5
+            // 
+            resources.ApplyResources(this.textBox5, "textBox5");
+            this.textBox5.Name = "textBox5";
+            // 
+            // textBox6
+            // 
+            resources.ApplyResources(this.textBox6, "textBox6");
+            this.textBox6.Name = "textBox6";
             // 
             // theFileNameDataGridViewTextBoxColumn
             // 
@@ -320,16 +420,17 @@
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanelBack.ResumeLayout(false);
             this.tableLayoutPanelLeftRight.ResumeLayout(false);
-            this.tableLayoutPanelFileList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
             this.panelImagePreview.ResumeLayout(false);
             this.panelImagePreview.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripPreview.ResumeLayout(false);
+            this.toolStripPreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.tableLayoutRight.ResumeLayout(false);
-            this.panelActionsSelected.ResumeLayout(false);
             this.panelActionsAll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
+            this.tableLayoutPanelFileList.ResumeLayout(false);
+            this.panelDocumentInfo.ResumeLayout(false);
+            this.panelDocumentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -348,28 +449,43 @@
         private System.Windows.Forms.ToolStripMenuItem openFromSourceDirToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelLeftRight;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFileList;
-        private System.Windows.Forms.DataGridView dataGridViewFileList;
         private System.Windows.Forms.BindingSource theFileBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theFileNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutRight;
         private System.Windows.Forms.Panel panelActionsSelected;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Panel panelActionsAll;
-        private System.Windows.Forms.Button btnSaveAllChanges;
+        private System.Windows.Forms.Button btnSaveDocuments;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.Panel panelImagePreview;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStripPreview;
         private System.Windows.Forms.ToolStripButton btnPrevious;
         private System.Windows.Forms.ToolStripButton btnNext;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnRotate;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel labelImageName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFileList;
+        private System.Windows.Forms.DataGridView dataGridViewFileList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theFileNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panelDocumentInfo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+    
     }
 }
 
