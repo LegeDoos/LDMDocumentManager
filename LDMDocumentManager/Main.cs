@@ -25,6 +25,7 @@ namespace LDM
             m_GlobalSettings = new GlobalSettings();
             m_FileManager = new FileManager(dataGridViewFileList);
             m_FileManager.MainSelectedFileChangeEvent += new MainSelectedFileChange(resetImage);
+            m_FileManager.CurrentDocumentChange += new CurrentDocumentChange(LoadDocument);
         }
 
         private EventHandler LoadImage()
@@ -64,10 +65,6 @@ namespace LDM
             m_FileManager.AddFilesFromSourceDir();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
@@ -107,6 +104,17 @@ namespace LDM
             else
             {
                 labelImageName.Visible = false;
+            }
+        }
+
+        private void LoadDocument()
+        {
+            if (m_FileManager.CurrentDocument != null)
+            {
+                Document current = m_FileManager.CurrentDocument;
+
+                textBoxDocumentCategory.Refresh();
+                
             }
         }
 

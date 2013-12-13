@@ -11,6 +11,7 @@ using LegeDoos.Utils;
 namespace LegeDoos.LDM
 {
     public delegate void MainSelectedFileChange();
+    public delegate void CurrentDocumentChange();
 
     class FileManager
     {
@@ -18,8 +19,11 @@ namespace LegeDoos.LDM
         private DataGridView m_FileListDataGridView = null;
         public List<TheFile> SelectedFiles { get; private set; }
         public TheFile MainSelectedFile { get; private set; }
+        public Document CurrentDocument { get; set; }
+        private List<Document> DocumentList = null;
 
         public event MainSelectedFileChange MainSelectedFileChangeEvent;
+        public event CurrentDocumentChange CurrentDocumentChange;
 
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
@@ -27,15 +31,56 @@ namespace LegeDoos.LDM
         /// <param name="_dataGridViewFileList"></param>
         public FileManager(DataGridView _dataGridViewFileList)
         {
-            InitList();
+            Init();
             m_FileListDataGridView = _dataGridViewFileList;
             m_FileListDataGridView.SelectionChanged += new System.EventHandler(this.FileListSelectionChanged);
 
         }
 
-        public void InitList()
+        public void Init()
         {
             TheFileList = new List<TheFile>();
+            DocumentList = new List<Document>();
+            CurrentDocument = getNewDocument();
+            
+        }
+        /// <summary>
+        /// Get a new document from te list
+        /// </summary>
+        /// <returns>A new document</returns>
+        private Document getNewDocument()
+        {
+            Document retVal = null;
+            if (DocumentList != null)
+            {
+                retVal = DocumentList.FirstOrDefault(d => d.UnSaved == true);
+                if (retVal == null)
+                {
+                    retVal = new Document();
+                    DocumentList.Add(retVal);
+                }
+            }
+            return retVal;
+        }
+        /// <summary>
+        /// Get the document for a file. Return new documemt if no documnet found
+        /// </summary>
+        /// <param name="_file">The file to find te document for</param>
+        /// <returns>The document for the file or a new document</returns>
+        private Document getDocumentForFile(TheFile _file)
+        {
+            Document retVal = null;
+            var localDocuments =
+                from Document in DocumentList
+                where (Document.FileList.FirstOrDefault(f => f.PathAndFileName == _file.PathAndFileName) != null)
+                select Document;
+
+            retVal = localDocuments.FirstOrDefault();
+
+            if (retVal == null)
+                retVal = getNewDocument();
+            
+            return retVal;
         }
 
         private void InitGridView()
@@ -124,7 +169,7 @@ namespace LegeDoos.LDM
             {
                 if (MessageBox.Show("Close open files?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    InitList();
+                    Init();
                 }
                 else
                 {
@@ -142,6 +187,7 @@ namespace LegeDoos.LDM
         {
             TheFile item;
             string oldFileName = MainSelectedFile != null ? MainSelectedFile.TheFileName : "";
+            Guid oldGuid = CurrentDocument != null ? CurrentDocument.Id : Guid.Empty;
 
             //fill list of selected items
             SelectedFiles = new List<TheFile>();
@@ -155,7 +201,8 @@ namespace LegeDoos.LDM
                 return;
 
             SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ToList();
-            //determine main image (first created)
+
+            //determine main file (first created from selected)
             MainSelectedFile = SelectedFiles.FirstOrDefault();
 
             //trigger event so the new immage can be loaded
@@ -163,6 +210,11 @@ namespace LegeDoos.LDM
                 MainSelectedFileChangeEvent();
             
             //load values
+            CurrentDocument = getDocumentForFile(MainSelectedFile);
+
+            //trigger event so the new document can be loaded
+            if ((oldGuid == Guid.Empty || CurrentDocument.Id != oldGuid) && CurrentDocumentChange != null)
+                CurrentDocumentChange();
         }
 
     }

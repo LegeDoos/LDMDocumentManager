@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,12 +18,17 @@ namespace LegeDoos.LDM
         public String Description { get; set; }
         public String[] Tags { get; set; }
         public List<TheFile> FileList { get; set; }
+        public Boolean UnSaved { get; private set; }
+
 
         public Document()
         {
             Id = new Guid();
             FileList = new List<TheFile>();
+            UnSaved = true;
+            Category = "test123";
         }
+
 
         public void AddFileToList(TheFile _file)
         {
@@ -38,6 +45,7 @@ namespace LegeDoos.LDM
                 _fileList.ForEach(AddFileToList);
             }
         }
+
 
 
     }
