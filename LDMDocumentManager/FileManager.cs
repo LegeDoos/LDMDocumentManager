@@ -78,7 +78,10 @@ namespace LegeDoos.LDM
             retVal = localDocuments.FirstOrDefault();
 
             if (retVal == null)
+            {
                 retVal = getNewDocument();
+                retVal.InitFromFile(_file);
+            }
             
             return retVal;
         }
@@ -120,7 +123,10 @@ namespace LegeDoos.LDM
             {
                 CheckFileListEmpty();
                 OpenFileDialog FileDialog = new OpenFileDialog();
-                FileDialog.InitialDirectory = GlobalSettings.theSettings.SourcePath;
+                /* Disabled: this takes too long if the folder doesn't exist
+                if (Directory.Exists(GlobalSettings.theSettings.SourcePath))
+                    FileDialog.InitialDirectory = GlobalSettings.theSettings.SourcePath;
+                */
                 FileDialog.Filter = "Images jpg|*.jpg|Images jpeg|*.jpeg|All files|*.*";
                 FileDialog.FilterIndex = 1;
                 FileDialog.Multiselect = true;
@@ -200,7 +206,7 @@ namespace LegeDoos.LDM
             if (SelectedFiles.Count == 0)
                 return;
 
-            SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ToList();
+            SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ThenBy(f => f.TheFileName).ToList();
 
             //determine main file (first created from selected)
             MainSelectedFile = SelectedFiles.FirstOrDefault();
@@ -217,5 +223,25 @@ namespace LegeDoos.LDM
                 CurrentDocumentChange();
         }
 
+
+        internal void SaveDocument()
+        {
+            if (!CurrentDocument.Save(SelectedFiles))
+            {
+                MessageBox.Show("Unable to save document metadata");
+            }
+          
+            //refresh datagrid (colors for items with document
+
+
+        }
+
+        internal void DeleteDocument()
+        {
+            DocumentList.Remove(CurrentDocument);
+            CurrentDocument = getDocumentForFile(MainSelectedFile);
+            if (CurrentDocumentChange != null)
+                CurrentDocumentChange();
+        }
     }
 }

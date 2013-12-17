@@ -39,5 +39,23 @@ namespace LegeDoos.LDM
             CreatedDateTime = File.GetCreationTimeUtc(PathAndFileName);
             CreatedDate = StringManagement.DateToString(CreatedDateTime);
         }
+
+        public string GetSenderFromPath 
+        { 
+            get 
+            {
+                //#15
+                return "";
+            } 
+        }
+
+        public string GetCategoryFromFileName 
+        { 
+            get
+            {
+                //#15
+                return "";
+            }
+        }
     }
 } 

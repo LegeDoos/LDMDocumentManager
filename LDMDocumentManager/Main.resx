@@ -429,7 +429,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStripPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 25</value>
+    <value>351, 25</value>
   </data>
   <data name="toolStripPreview.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -459,7 +459,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 601</value>
+    <value>351, 601</value>
   </data>
   <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -486,7 +486,7 @@
     <value>325, 4</value>
   </data>
   <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 601</value>
+    <value>351, 601</value>
   </data>
   <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -510,7 +510,7 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 604</value>
+    <value>172, 604</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 1</value>
@@ -530,6 +530,33 @@
   <data name="&gt;&gt;panelActionsSelected.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 318</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Delete document</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>panelDocumentInfo</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -540,10 +567,10 @@
     <value>110, 23</value>
   </data>
   <data name="btnApply.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="btnApply.Text" xml:space="preserve">
-    <value>Create document</value>
+    <value>Save document</value>
   </data>
   <data name="&gt;&gt;btnApply.Name" xml:space="preserve">
     <value>btnApply</value>
@@ -555,8 +582,11 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
+  <metadata name="documentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>439, 17</value>
+  </metadata>
   <data name="textBoxDocumentTags.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 276</value>
   </data>
@@ -564,7 +594,7 @@
     <value>296, 20</value>
   </data>
   <data name="textBoxDocumentTags.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentTags.Name" xml:space="preserve">
     <value>textBoxDocumentTags</value>
@@ -576,11 +606,8 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentTags.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="documentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>439, 17</value>
-  </metadata>
   <data name="textBoxDocumentDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 233</value>
   </data>
@@ -588,7 +615,7 @@
     <value>296, 20</value>
   </data>
   <data name="textBoxDocumentDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentDescription.Name" xml:space="preserve">
     <value>textBoxDocumentDescription</value>
@@ -600,7 +627,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentDescription.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textBoxDocumentCategory.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 189</value>
@@ -609,7 +636,7 @@
     <value>296, 20</value>
   </data>
   <data name="textBoxDocumentCategory.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentCategory.Name" xml:space="preserve">
     <value>textBoxDocumentCategory</value>
@@ -621,7 +648,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentCategory.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textBoxSender.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 146</value>
@@ -642,7 +669,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxSender.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -654,13 +681,13 @@
     <value>12, 260</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
+    <value>31, 13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Tags (comma seperated)</value>
+    <value>Tags</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -672,7 +699,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="textBoxDocumentDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 101</value>
@@ -681,7 +708,7 @@
     <value>296, 20</value>
   </data>
   <data name="textBoxDocumentDate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentDate.Name" xml:space="preserve">
     <value>textBoxDocumentDate</value>
@@ -693,7 +720,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentDate.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -723,7 +750,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -753,7 +780,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="textBoxDocumentName.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 58</value>
@@ -762,7 +789,7 @@
     <value>296, 20</value>
   </data>
   <data name="textBoxDocumentName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentName.Name" xml:space="preserve">
     <value>textBoxDocumentName</value>
@@ -774,7 +801,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;textBoxDocumentName.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -804,7 +831,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -834,7 +861,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -864,7 +891,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -894,7 +921,7 @@
     <value>panelDocumentInfo</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="panelDocumentInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -903,7 +930,7 @@
     <value>3, 3</value>
   </data>
   <data name="panelDocumentInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>338, 595</value>
+    <value>369, 595</value>
   </data>
   <data name="panelDocumentInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -924,13 +951,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>714, 4</value>
+    <value>683, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 601</value>
+    <value>375, 601</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -978,7 +1005,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320,Percent,100,Absolute,350" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320,Percent,100,Absolute,381" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveDocuments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1075,9 +1102,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1068, 689</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Document Manager</value>

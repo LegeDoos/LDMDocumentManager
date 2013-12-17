@@ -71,6 +71,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,6 +275,7 @@
             // panelDocumentInfo
             // 
             this.panelDocumentInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDocumentInfo.Controls.Add(this.btnDelete);
             this.panelDocumentInfo.Controls.Add(this.btnApply);
             this.panelDocumentInfo.Controls.Add(this.textBoxDocumentTags);
             this.panelDocumentInfo.Controls.Add(this.textBoxDocumentDescription);
@@ -300,6 +302,7 @@
             // 
             // textBoxDocumentTags
             // 
+            this.textBoxDocumentTags.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "Tags", true));
             resources.ApplyResources(this.textBoxDocumentTags, "textBoxDocumentTags");
             this.textBoxDocumentTags.Name = "textBoxDocumentTags";
             // 
@@ -344,9 +347,11 @@
             // 
             // textBoxDocumentName
             // 
-            this.textBoxDocumentName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "DocumentName", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "\"\""));
+            this.textBoxDocumentName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "DocumentName", true));
             resources.ApplyResources(this.textBoxDocumentName, "textBoxDocumentName");
             this.textBoxDocumentName.Name = "textBoxDocumentName";
+            this.textBoxDocumentName.ReadOnly = true;
+            this.textBoxDocumentName.TabStop = false;
             // 
             // label3
             // 
@@ -379,6 +384,13 @@
             resources.ApplyResources(this.btnSaveDocuments, "btnSaveDocuments");
             this.btnSaveDocuments.Name = "btnSaveDocuments";
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // theFileNameDataGridViewTextBoxColumn
             // 
@@ -497,6 +509,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource documentBindingSource;
+        private System.Windows.Forms.Button btnDelete;
     
     }
 }

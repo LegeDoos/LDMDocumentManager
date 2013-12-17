@@ -68,12 +68,7 @@ namespace LDM
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            string txt;
-            if (m_FileManager.MainSelectedFile != null)
-                txt = m_FileManager.MainSelectedFile.TheFileName;
-            else
-                txt = "Nothing";
-            MessageBox.Show(txt);
+            m_FileManager.SaveDocument();
         }
 
         private void resetImage()
@@ -112,10 +107,15 @@ namespace LDM
             if (m_FileManager.CurrentDocument != null)
             {
                 Document current = m_FileManager.CurrentDocument;
-
-                textBoxDocumentCategory.Refresh();
+                documentBindingSource.DataSource = current;
                 
-            }
+                textBoxDocumentCategory.Text = current.Category;
+                textBoxDocumentDate.Text = current.CreatedDateYYYYMMDD;
+                textBoxDocumentDescription.Text = current.Description;
+                
+                //textBoxDocumentName.Text = current.DocumentName;
+               
+                }
         }
 
         private void btnRotate_Click(object sender, EventArgs e)
@@ -154,6 +154,11 @@ namespace LDM
                 m_ImageIndex++;
                 loadImage();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            m_FileManager.DeleteDocument();
         }
 
 
