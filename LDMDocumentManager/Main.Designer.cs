@@ -42,6 +42,7 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
+            this.colDocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelImagePreview = new System.Windows.Forms.Panel();
             this.toolStripPreview = new System.Windows.Forms.ToolStrip();
@@ -55,6 +56,7 @@
             this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
             this.panelActionsSelected = new System.Windows.Forms.Panel();
             this.panelDocumentInfo = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.textBoxDocumentTags = new System.Windows.Forms.TextBox();
             this.textBoxDocumentDescription = new System.Windows.Forms.TextBox();
@@ -71,7 +73,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,6 +181,7 @@
             this.dataGridViewFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.theFileNameDataGridViewTextBoxColumn,
+            this.colDocumentName,
             this.CreatedDateTime,
             this.createdDateDataGridViewTextBoxColumn,
             this.thePathDataGridViewTextBoxColumn,
@@ -189,6 +191,12 @@
             this.dataGridViewFileList.Name = "dataGridViewFileList";
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // colDocumentName
+            // 
+            resources.ApplyResources(this.colDocumentName, "colDocumentName");
+            this.colDocumentName.Name = "colDocumentName";
+            this.colDocumentName.ReadOnly = true;
             // 
             // CreatedDateTime
             // 
@@ -293,6 +301,13 @@
             resources.ApplyResources(this.panelDocumentInfo, "panelDocumentInfo");
             this.panelDocumentInfo.Name = "panelDocumentInfo";
             // 
+            // btnDelete
+            // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnApply
             // 
             resources.ApplyResources(this.btnApply, "btnApply");
@@ -384,13 +399,6 @@
             resources.ApplyResources(this.btnSaveDocuments, "btnSaveDocuments");
             this.btnSaveDocuments.Name = "btnSaveDocuments";
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // theFileNameDataGridViewTextBoxColumn
             // 
@@ -489,11 +497,6 @@
         private System.Windows.Forms.ToolStripLabel labelImageName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFileList;
         private System.Windows.Forms.DataGridView dataGridViewFileList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theFileNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panelDocumentInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxDocumentName;
@@ -510,6 +513,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource documentBindingSource;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theFileNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDocumentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
     
     }
 }

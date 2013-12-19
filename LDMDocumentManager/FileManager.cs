@@ -33,8 +33,14 @@ namespace LegeDoos.LDM
         {
             Init();
             m_FileListDataGridView = _dataGridViewFileList;
+            
+            //subscribe to events
             m_FileListDataGridView.SelectionChanged += new System.EventHandler(this.FileListSelectionChanged);
+            
+            //this.dataGridViewFileList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewFileList_CellFormatting);
 
+            m_FileListDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(SetDataGridRowValue);
+            //m_FileListDataGridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(SetDataGridRowValue);
         }
 
         public void Init()
@@ -67,7 +73,7 @@ namespace LegeDoos.LDM
         /// </summary>
         /// <param name="_file">The file to find te document for</param>
         /// <returns>The document for the file or a new document</returns>
-        private Document getDocumentForFile(TheFile _file)
+        private Document getDocumentForFile(TheFile _file, bool _newIfNotFound = false)
         {
             Document retVal = null;
             var localDocuments =
@@ -77,7 +83,7 @@ namespace LegeDoos.LDM
 
             retVal = localDocuments.FirstOrDefault();
 
-            if (retVal == null)
+            if (retVal == null && _newIfNotFound)
             {
                 retVal = getNewDocument();
                 retVal.InitFromFile(_file);
@@ -216,7 +222,7 @@ namespace LegeDoos.LDM
                 MainSelectedFileChangeEvent();
             
             //load values
-            CurrentDocument = getDocumentForFile(MainSelectedFile);
+            CurrentDocument = getDocumentForFile(MainSelectedFile, true);
 
             //trigger event so the new document can be loaded
             if ((oldGuid == Guid.Empty || CurrentDocument.Id != oldGuid) && CurrentDocumentChange != null)
@@ -232,16 +238,35 @@ namespace LegeDoos.LDM
             }
           
             //refresh datagrid (colors for items with document
-
+            m_FileListDataGridView.Refresh();
 
         }
 
         internal void DeleteDocument()
         {
             DocumentList.Remove(CurrentDocument);
-            CurrentDocument = getDocumentForFile(MainSelectedFile);
+            CurrentDocument = getDocumentForFile(MainSelectedFile, true);
             if (CurrentDocumentChange != null)
                 CurrentDocumentChange();
+            m_FileListDataGridView.Refresh();
         }
+
+        private void SetDataGridRowValue(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow row = m_FileListDataGridView.Rows[e.RowIndex];
+                
+                TheFile FileLocal;
+                FileLocal = TheFileList.FirstOrDefault(f => f.TheFileName == row.Cells[0].Value);
+
+                Document documentLocal;
+                documentLocal = getDocumentForFile(FileLocal);
+                
+                //todo: get column by name
+                row.Cells[1].Value = documentLocal != null ? documentLocal.DocumentName : string.Empty;
+            }
+        }
+        
     }
 }

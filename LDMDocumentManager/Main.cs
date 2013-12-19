@@ -112,9 +112,6 @@ namespace LDM
                 textBoxDocumentCategory.Text = current.Category;
                 textBoxDocumentDate.Text = current.CreatedDateYYYYMMDD;
                 textBoxDocumentDescription.Text = current.Description;
-                
-                //textBoxDocumentName.Text = current.DocumentName;
-               
                 }
         }
 
@@ -160,7 +157,6 @@ namespace LDM
         {
             m_FileManager.DeleteDocument();
         }
-
 
     }
 }

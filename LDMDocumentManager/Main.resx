@@ -225,6 +225,12 @@
   <data name="theFileNameDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
+  <metadata name="colDocumentName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colDocumentName.HeaderText" xml:space="preserve">
+    <value>Document</value>
+  </data>
   <metadata name="CreatedDateTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -265,7 +271,7 @@
     <value>3, 3</value>
   </data>
   <data name="dataGridViewFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 595</value>
+    <value>488, 595</value>
   </data>
   <data name="dataGridViewFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +298,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanelFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 601</value>
+    <value>494, 601</value>
   </data>
   <data name="tableLayoutPanelFileList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -429,7 +435,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStripPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 25</value>
+    <value>161, 25</value>
   </data>
   <data name="toolStripPreview.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -459,7 +465,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 601</value>
+    <value>161, 601</value>
   </data>
   <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -483,10 +489,10 @@
     <value>Fill</value>
   </data>
   <data name="panelImagePreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 4</value>
+    <value>505, 4</value>
   </data>
   <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 601</value>
+    <value>161, 601</value>
   </data>
   <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -510,7 +516,7 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 604</value>
+    <value>182, 604</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 1</value>
@@ -930,7 +936,7 @@
     <value>3, 3</value>
   </data>
   <data name="panelDocumentInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 595</value>
+    <value>379, 595</value>
   </data>
   <data name="panelDocumentInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -951,13 +957,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>683, 4</value>
+    <value>673, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 601</value>
+    <value>385, 601</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1005,7 +1011,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320,Percent,100,Absolute,381" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,500,Percent,100,Absolute,391" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveDocuments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1103,6 +1109,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1068, 689</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Document Manager</value>
   </data>
@@ -1147,6 +1156,12 @@
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colDocumentName.Name" xml:space="preserve">
+    <value>colDocumentName</value>
+  </data>
+  <data name="&gt;&gt;colDocumentName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
     <value>CreatedDateTime</value>
