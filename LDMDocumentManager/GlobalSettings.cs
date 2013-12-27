@@ -13,6 +13,7 @@ namespace LegeDoos.LDM
         public string SourcePath { get; set; }
         public string DestPath {  get;  set; }
         public string LastStaticDate {  get;  set; }
+        public Int64 DocumentNumber { get; set; }
         private static GlobalSettings m_globalSettings =  null;
 
         public GlobalSettings()
@@ -40,6 +41,7 @@ namespace LegeDoos.LDM
             DestPath = Properties.Settings.Default.DestinationPath;
 #endif
             LastStaticDate = Properties.Settings.Default.LastStaticDate;
+            DocumentNumber = Properties.Settings.Default.DocumentNumber;
         }
 
         public void SaveSettings()

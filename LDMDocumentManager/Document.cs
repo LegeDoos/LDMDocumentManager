@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace LegeDoos.LDM
 {
     public class Document
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public String DocumentName 
         { 
             get
             {
-                return CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}_{1}_{2}", CreatedDateYYYYMMDD, Sender, Category) : "";
+                return CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}_{1}_{2}_{3}", CreatedDateYYYYMMDD, Sender, Category, Id) : "";
             }
         }
         public String CreatedDateYYYYMMDD { get; set; }
@@ -25,12 +27,15 @@ namespace LegeDoos.LDM
         public String Description { get; set; }
         public String Tags { get; set; }
         public List<TheFile> FileList { get; set; }
-        public Boolean UnSaved { get; private set; }
+        public Boolean UnSaved { get; set; }
+        public static XmlSerializer xs;
 
         public Document()
         {
+            //Id = Guid.NewGuid();
             Id = new Guid();
             FileList = new List<TheFile>();
+            xs = new XmlSerializer(typeof(Document));
             UnSaved = true;
             Category = string.Empty;
             Sender = string.Empty;
@@ -101,5 +106,25 @@ namespace LegeDoos.LDM
             Category = _file.GetCategoryFromFileName;
         }
 
+        /// <summary>
+        /// Save the document to XML
+        /// </summary>
+        /// <param name="_filename">Filename to save to</param>
+        internal void SaveToFile(string _filename)
+        {
+            try
+            {
+                if (Directory.Exists(Path.GetDirectoryName(_filename)) && UnSaved == false)
+                {
+                    using (StreamWriter sw = new StreamWriter(_filename))
+                    {
+                        xs.Serialize(sw, this);
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
     }
 }

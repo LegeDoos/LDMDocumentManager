@@ -230,7 +230,7 @@ namespace LegeDoos.LDM
         }
 
 
-        internal void SaveDocument()
+        internal void SaveDocumentMetaData()
         {
             if (!CurrentDocument.Save(SelectedFiles))
             {
@@ -267,6 +267,27 @@ namespace LegeDoos.LDM
                 row.Cells[1].Value = documentLocal != null ? documentLocal.DocumentName : string.Empty;
             }
         }
-        
+
+
+        internal void ProcessDocuments()
+        {
+            var docs =
+                from Document in DocumentList
+                where Document.UnSaved == false
+                select Document;
+
+            foreach (Document d in docs)
+            {
+                //test save
+                string test = @"d:\a\test.xml";
+                d.SaveToFile(test);
+
+            }
+                /*
+                from document in DocumentLis .OrderByDescending(m => m.MatchFactor)
+                where match.MatchOnFolder || (match.MatchOnTitle && (match.MatchOnArtist || match.MatchOnFileName))
+                select match;*/
+
+        }
     }
 }

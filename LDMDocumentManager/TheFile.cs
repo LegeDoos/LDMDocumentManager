@@ -10,25 +10,35 @@ namespace LegeDoos.LDM
 {
     public class TheFile
     {
-        public string PathAndFileName { get; private set; }
+        public string PathAndFileName { get; set; }
 
-        public string ThePath { get; private set; }
-        public string TheFileName { get; private set; }
-        public string TheExtension { get; private set; }
-        public string CreatedDate { get; private set; }
-        public DateTime CreatedDateTime { get; private set; }
+        public string ThePath { get; set; }
+        public string TheFileName { get; set; }
+        public string TheExtension { get; set; }
+        public string CreatedDate { get; set; }
+        public DateTime CreatedDateTime { get; set; }
 
         public TheFile(string FileName)
+        {
+            if (!Init(FileName))
+            {
+                throw new Exception(string.Format("File {0} not found", FileName));
+            }
+        }
+
+        public TheFile()
+        {
+        }
+
+        private Boolean Init(string FileName)
         {
             if (File.Exists(FileName))
             {
                 PathAndFileName = FileName;
                 LoadFileProperties();
+                return true;
             }
-            else
-            {
-                throw new Exception(string.Format("File {0} not found", FileName));
-            }
+            return false;
         }
 
         private void LoadFileProperties()

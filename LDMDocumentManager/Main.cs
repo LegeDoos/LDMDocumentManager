@@ -68,7 +68,7 @@ namespace LDM
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            m_FileManager.SaveDocument();
+            m_FileManager.SaveDocumentMetaData();
         }
 
         private void resetImage()
@@ -156,6 +156,11 @@ namespace LDM
         private void btnDelete_Click(object sender, EventArgs e)
         {
             m_FileManager.DeleteDocument();
+        }
+
+        private void btnSaveDocuments_Click(object sender, EventArgs e)
+        {
+            m_FileManager.ProcessDocuments();
         }
 
     }

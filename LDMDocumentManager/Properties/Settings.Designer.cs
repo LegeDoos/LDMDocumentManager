@@ -58,5 +58,17 @@ namespace LegeDoos.LDM.Properties {
                 this["LastStaticDate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DocumentNumber {
+            get {
+                return ((int)(this["DocumentNumber"]));
+            }
+            set {
+                this["DocumentNumber"] = value;
+            }
+        }
     }
 }

@@ -436,6 +436,7 @@
             resources.ApplyResources(this.btnSaveDocuments, "btnSaveDocuments");
             this.btnSaveDocuments.Name = "btnSaveDocuments";
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
+            this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
             // Main
             // 
