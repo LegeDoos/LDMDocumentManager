@@ -25,6 +25,10 @@ namespace LegeDoos.LDM
         public event MainSelectedFileChange MainSelectedFileChangeEvent;
         public event CurrentDocumentChange CurrentDocumentChange;
 
+        private string m_NumberSequenceIdDocNo = "DOCUMENTNUMBER";
+        private string m_NumberSequenceSaveLocation = @"d:\a\"; //todo
+        private NumberSequence DocumentNumberSequence;
+
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
         /// </summary>
@@ -48,7 +52,10 @@ namespace LegeDoos.LDM
             TheFileList = new List<TheFile>();
             DocumentList = new List<Document>();
             CurrentDocument = getNewDocument();
-            
+            NumberSequenceManager.TheNumberSequenceManager.ConfigLocation = m_NumberSequenceSaveLocation;
+            NumberSequence test;
+            test = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(m_NumberSequenceIdDocNo);
+            test = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(m_NumberSequenceIdDocNo);
         }
         /// <summary>
         /// Get a new document from te list
@@ -281,13 +288,7 @@ namespace LegeDoos.LDM
                 //test save
                 string test = @"d:\a\test.xml";
                 d.SaveToFile(test);
-
             }
-                /*
-                from document in DocumentLis .OrderByDescending(m => m.MatchFactor)
-                where match.MatchOnFolder || (match.MatchOnTitle && (match.MatchOnArtist || match.MatchOnFileName))
-                select match;*/
-
         }
     }
 }
