@@ -53,9 +53,6 @@ namespace LegeDoos.LDM
             DocumentList = new List<Document>();
             CurrentDocument = getNewDocument();
             NumberSequenceManager.TheNumberSequenceManager.ConfigLocation = m_NumberSequenceSaveLocation;
-            NumberSequence test;
-            test = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(m_NumberSequenceIdDocNo);
-            test = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(m_NumberSequenceIdDocNo);
         }
         /// <summary>
         /// Get a new document from te list

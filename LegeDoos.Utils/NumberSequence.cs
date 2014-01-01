@@ -8,7 +8,9 @@ using System.Xml.Serialization;
 
 namespace LegeDoos.Utils
 {
-
+    /// <summary>
+    /// Class to handle multiple number sequences in a static list
+    /// </summary>
     public class NumberSequenceManager
     {
         private static NumberSequenceManager m_NumberSequenceManager = null;
@@ -20,7 +22,7 @@ namespace LegeDoos.Utils
             NumberSequenceList = new List<NumberSequence>();
         }
 
-        public static NumberSequenceManager TheNumberSequenceManager //(string ConfigLocation)
+        public static NumberSequenceManager TheNumberSequenceManager
         {
             get 
             {
@@ -30,9 +32,16 @@ namespace LegeDoos.Utils
             }
         }
 
+        /// <summary>
+        /// Find or create the number sequence
+        /// </summary>
+        /// <param name="SequenceId">Number sequence to find or create</param>
+        /// <returns>NumberSequence object</returns>
         public NumberSequence GetNumberSequence(string SequenceId)
         {
             NumberSequence retVal;
+
+            ValidateConfigLocation();
 
             retVal = NumberSequenceList.FirstOrDefault(ns => ns.NumberSequenceId == SequenceId);
 
@@ -43,24 +52,42 @@ namespace LegeDoos.Utils
             }
             return retVal;
         }
+
+        /// <summary>
+        /// Validate if the configlocation is set
+        /// </summary>
+        private void ValidateConfigLocation()
+        {
+            if (ConfigLocation == null || !Directory.Exists(ConfigLocation))
+            {
+                throw new Exception("Config location not set for numbersequence manager");
+            }
+        }
     }
 
+    /// <summary>
+    /// Create continuous numbers
+    /// </summary>
     public class NumberSequence
     {
-        //external
         public Int64 NextNum { get; set; }
         public Guid LockGuid { get; set; }
         public string NumberSequenceId { get; set; }
         
-      //  private Guid CurrentGuid = Guid.NewGuid();
-
-        //internal
-       // private int m_CacheSize = 10;
-       // private static readonly object ThisLock = new object();
+        private Guid CurrentGuid = Guid.NewGuid();
+        private const Int64 m_CacheSize = 3;
+        private static readonly object ThisLock = new object();
         public static XmlSerializer xs;
-      //  private Int64 NumbersInCache = 0;
-      //  private Int64 NextNumCache = 0;
-     //   private string ConfigFileLocation { get; set; }
+        private Int64 NumbersInCache = 0;
+        private Int64 NextNumCache = 0;
+        private string ConfigFileName { get; set; }
+        private string ConfigPath
+        {
+            get
+            {
+                return ConfigFileName != null ? Path.GetDirectoryName(ConfigFileName) : String.Empty;
+            }
+        }
 
         #region Contstructors
 
@@ -69,27 +96,33 @@ namespace LegeDoos.Utils
         /// </summary>
         public NumberSequence()
         {
-            xs = new XmlSerializer(typeof(NumberSequence));
+            InitXmlSerializer();
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="SequenceID">Id of the number sequence</param>
-        /// <param name="ConfigFileLocation">Location of the config file for the number sequence</param>
+        /// <param name="_ConfigFileLocation">Location of the config file for the number sequence</param>
         public NumberSequence(string SequenceID, string _ConfigFileLocation) : this()
         {
-            if (Directory.Exists(_ConfigFileLocation))
+            ConfigFileName = GetFileName(SequenceID, _ConfigFileLocation);
+
+            if (File.Exists(ConfigFileName))
+            {
+                throw new Exception("The number sequence already exists, use NumberSequence.GetNumbersequence instead");
+            }
+
+            if (Directory.Exists(ConfigPath))
             {
                 NumberSequenceId = SequenceID;
                 NextNum = 1;
                 LockGuid = Guid.Empty;
-                //ConfigFileLocation = _ConfigFileLocation;
-                SaveToFile(GetFileName(SequenceID, _ConfigFileLocation));
+                SaveToFile(ConfigFileName);
             }
             else
             {
-                throw new FileNotFoundException(string.Format("{0} not found for number sequence {1}", _ConfigFileLocation, SequenceID));
+                throw new FileNotFoundException(string.Format("{0} not found for number sequence {1}", ConfigFileName, SequenceID));
             }
         }
 
@@ -101,7 +134,7 @@ namespace LegeDoos.Utils
         /// </summary>
         /// <param name="SequenceID">Id of the number sequence</param>
         /// <param name="ConfigFileLocation">Location of the config file for the number sequence</param>
-        /// <returns></returns>
+        /// <returns>NumberSequence</returns>
         public static NumberSequence GetNumberSequence(string SequenceID, string ConfigFileLocation)
         {
             string FileName = GetFileName(SequenceID, ConfigFileLocation);
@@ -115,8 +148,13 @@ namespace LegeDoos.Utils
                 return new NumberSequence(SequenceID, ConfigFileLocation);
             }
         }
-        /*
-        public Int64 GetNextNum()
+        
+        /// <summary>
+        /// Get the next number from the numbersequence
+        /// </summary>
+        /// <param name="_CustomCacheSize">If you know the numbers you need you can set a custom cache size so the number sequence is continuous after restarting the application</param>
+        /// <returns></returns>
+        public Int64 GetNextNum(int _CustomCacheSize = -1)
         {
             Int64 retVal = 0;
             if (NumbersInCache == 0)
@@ -124,20 +162,23 @@ namespace LegeDoos.Utils
                 //get new nums from cache
                 lock (ThisLock)
                 {
-                    NumberSequence NumberSequenceHelper = new NumberSequence(NumberSequenceId, ConfigFileLocation);
+                    NumberSequence NumberSequenceHelper = GetNumberSequence(NumberSequenceId, ConfigPath);
                     if (NumberSequenceHelper.LockGuid == Guid.Empty)
                     {
                         LockGuid = CurrentGuid;
-                        SaveToFile(GetFileName(NumberSequenceId, ConfigFileLocation));
-                        NumbersInCache = m_CacheSize;
-                        NextNumCache = NextNum;
-                        NextNum = NextNum + NumbersInCache;
+                        //get next num from file (can be changed)
+                        NextNumCache = NumberSequenceHelper.NextNum;
+                        
+                        SaveToFile(ConfigFileName);
+                        NumbersInCache = _CustomCacheSize == -1 ? m_CacheSize : _CustomCacheSize;
+                        NextNum = NextNumCache + NumbersInCache;
                         LockGuid = Guid.Empty;
-                        SaveToFile(GetFileName(NumberSequenceId, ConfigFileLocation));
+                        SaveToFile(ConfigFileName);
                     }
                     else
                     {
                         //wait and try again
+                        throw new NotImplementedException();
                     }
                     
                 }
@@ -148,10 +189,19 @@ namespace LegeDoos.Utils
             NextNumCache++;
             return retVal;
         }
-        */
+        
         #endregion
 
         #region Helpers
+        /// <summary>
+        /// Initialize the XML serializer
+        /// </summary>
+        private static void InitXmlSerializer()
+        {
+            if (xs == null)
+                xs = new XmlSerializer(typeof(NumberSequence));
+        }
+
         /// <summary>
         /// Load number sequence settings from config file
         /// </summary>
@@ -159,9 +209,13 @@ namespace LegeDoos.Utils
         /// <returns></returns>
         private static NumberSequence LoadFromFile(string FileName)
         {
+            InitXmlSerializer();
+            NumberSequence RetVal;
             using (StreamReader sr = new StreamReader(FileName))
             {
-                return xs.Deserialize(sr) as NumberSequence;
+                RetVal = xs.Deserialize(sr) as NumberSequence;
+                RetVal.ConfigFileName = FileName;
+                return RetVal;
             }
         }
 
@@ -190,4 +244,5 @@ namespace LegeDoos.Utils
         #endregion
 
     }
+
 }
