@@ -86,11 +86,11 @@ namespace LDM
 
             if (m_FileManager.SelectedFiles != null && (m_ImageIndex >= 0 && m_ImageIndex < m_FileManager.SelectedFiles.Count))
             {
-                fileNameLocal = m_FileManager.SelectedFiles[m_ImageIndex].PathAndFileName;
+                fileNameLocal = m_FileManager.SelectedFiles[m_ImageIndex].SourcePathAndFileName;
                 if (fileNameLocal != string.Empty && File.Exists(fileNameLocal))
                 {
                     pictureBoxPreview.Image = new Bitmap(fileNameLocal);
-                    labelImageName.Text = string.Format("Preview of: {0}", m_FileManager.SelectedFiles[m_ImageIndex].TheFileName);
+                    labelImageName.Text = string.Format("Preview of: {0}", m_FileManager.SelectedFiles[m_ImageIndex].SourceFileName);
                     labelImageName.Visible = true;
                 }
                 else

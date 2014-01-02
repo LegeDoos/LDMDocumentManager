@@ -10,13 +10,14 @@ namespace LegeDoos.LDM
 {
     public class TheFile
     {
-        public string PathAndFileName { get; set; }
-
-        public string ThePath { get; set; }
-        public string TheFileName { get; set; }
-        public string TheExtension { get; set; }
+        public string SourcePathAndFileName { get; set; }
+        public string SourcePath { get; set; }
+        public string SourceFileName { get; set; }
+        public string SourceExtension { get; set; }
         public string CreatedDate { get; set; }
         public DateTime CreatedDateTime { get; set; }
+        public string DestFileName { get; set; }
+        public string DestFileNumber { get; set; }
 
         public TheFile(string FileName)
         {
@@ -34,7 +35,7 @@ namespace LegeDoos.LDM
         {
             if (File.Exists(FileName))
             {
-                PathAndFileName = FileName;
+                SourcePathAndFileName = FileName;
                 LoadFileProperties();
                 return true;
             }
@@ -43,10 +44,10 @@ namespace LegeDoos.LDM
 
         private void LoadFileProperties()
         {
-            ThePath = Path.GetDirectoryName(PathAndFileName);
-            TheFileName = Path.GetFileName(PathAndFileName);
-            TheExtension = Path.GetExtension(PathAndFileName);
-            CreatedDateTime = File.GetCreationTimeUtc(PathAndFileName);
+            SourcePath = Path.GetDirectoryName(SourcePathAndFileName);
+            SourceFileName = Path.GetFileName(SourcePathAndFileName);
+            SourceExtension = Path.GetExtension(SourcePathAndFileName);
+            CreatedDateTime = File.GetCreationTimeUtc(SourcePathAndFileName);
             CreatedDate = StringManagement.DateToString(CreatedDateTime);
         }
 

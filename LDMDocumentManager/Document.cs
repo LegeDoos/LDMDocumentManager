@@ -8,17 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using LegeDoos.Utils;
 
 namespace LegeDoos.LDM
 {
     public class Document
     {
         public Guid Id { get; set; }
+        public Int64 DocumentNumber { get; set; }
+        private string DocumentNumberAsString
+        {
+            get
+            {
+                return DocumentNumber == 0 ? "xxx" : DocumentNumber.ToString();
+            }
+        }
         public String DocumentName 
         { 
             get
             {
-                return CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}_{1}_{2}_{3}", CreatedDateYYYYMMDD, Sender, Category, Id) : "";
+                return CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}_{1}_{2}_{3}", CreatedDateYYYYMMDD, Sender, Category, DocumentNumberAsString) : "";
             }
         }
         public String CreatedDateYYYYMMDD { get; set; }
@@ -29,11 +38,10 @@ namespace LegeDoos.LDM
         public List<TheFile> FileList { get; set; }
         public Boolean UnSaved { get; set; }
         public static XmlSerializer xs;
+        private const string NumberSequenceIdDocNo = "DOCUMENTNUMBER";
 
         public Document()
         {
-            //Id = Guid.NewGuid();
-            Id = new Guid();
             FileList = new List<TheFile>();
             xs = new XmlSerializer(typeof(Document));
             UnSaved = true;
@@ -41,8 +49,6 @@ namespace LegeDoos.LDM
             Sender = string.Empty;
             CreatedDateYYYYMMDD = string.Empty;
         }
-
-
 
         public void AddFileToList(TheFile _file)
         {
@@ -107,24 +113,71 @@ namespace LegeDoos.LDM
         }
 
         /// <summary>
-        /// Save the document to XML
+        /// Save the document metadata to XML
         /// </summary>
         /// <param name="_filename">Filename to save to</param>
-        internal void SaveToFile(string _filename)
+        internal void SaveMetaDataToFile(string _filename)
         {
-            try
+            if (Directory.Exists(Path.GetDirectoryName(_filename)) && UnSaved == false)
             {
-                if (Directory.Exists(Path.GetDirectoryName(_filename)) && UnSaved == false)
+                using (StreamWriter sw = new StreamWriter(_filename))
                 {
-                    using (StreamWriter sw = new StreamWriter(_filename))
-                    {
-                        xs.Serialize(sw, this);
-                    }
+                    xs.Serialize(sw, this);
                 }
             }
-            catch
+        }
+
+        internal bool Process()
+        {
+            bool retVal = true;
+
+            //create or validate destination
+            retVal = CreateDestinationFolder();
+
+            //set document guid and number
+            if (retVal)
             {
+                Id = Guid.NewGuid();
+                DocumentNumber = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(NumberSequenceIdDocNo).GetNextNum();
             }
+
+            //set file properties
+
+            //move files
+
+            //save xml
+
+            //test save
+            string test = @"d:\a\test.xml";
+            //SaveMetaDataToFile(test);
+
+
+            throw new NotImplementedException();
+        }
+
+        private bool CreateDestinationFolder()
+        {
+            bool retVal;
+            string PathLocal = Path.Combine(GlobalSettings.theSettings.DestPath, Sender);
+
+            if (Directory.Exists(PathLocal))
+            {
+                retVal = true;
+            }
+            else
+            {
+                try
+                {
+                    //create folder
+                    Directory.CreateDirectory(PathLocal);
+                    retVal = true;
+                }
+                catch
+                {
+                    retVal = false;
+                }
+            }
+            return retVal;
         }
     }
 }

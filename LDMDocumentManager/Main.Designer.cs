@@ -42,13 +42,6 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
-            this.theFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelImagePreview = new System.Windows.Forms.Panel();
             this.toolStripPreview = new System.Windows.Forms.ToolStrip();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
@@ -64,7 +57,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.textBoxDocumentTags = new System.Windows.Forms.TextBox();
-            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDocumentDescription = new System.Windows.Forms.TextBox();
             this.textBoxDocumentCategory = new System.Windows.Forms.TextBox();
             this.textBoxSender = new System.Windows.Forms.TextBox();
@@ -79,19 +71,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SourceFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
             this.tableLayoutPanelFileList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
             this.panelImagePreview.SuspendLayout();
             this.toolStripPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.tableLayoutRight.SuspendLayout();
             this.panelDocumentInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             this.panelActionsAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -180,64 +178,15 @@
             this.dataGridViewFileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.theFileNameDataGridViewTextBoxColumn,
+            this.SourceFileName,
             this.colDocumentName,
             this.CreatedDateTime,
-            this.createdDateDataGridViewTextBoxColumn,
-            this.thePathDataGridViewTextBoxColumn,
-            this.theExtensionDataGridViewTextBoxColumn});
+            this.createdDateDataGridViewTextBoxColumn});
             this.dataGridViewFileList.DataSource = this.theFileBindingSource;
             resources.ApplyResources(this.dataGridViewFileList, "dataGridViewFileList");
             this.dataGridViewFileList.Name = "dataGridViewFileList";
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // theFileNameDataGridViewTextBoxColumn
-            // 
-            this.theFileNameDataGridViewTextBoxColumn.DataPropertyName = "TheFileName";
-            resources.ApplyResources(this.theFileNameDataGridViewTextBoxColumn, "theFileNameDataGridViewTextBoxColumn");
-            this.theFileNameDataGridViewTextBoxColumn.Name = "theFileNameDataGridViewTextBoxColumn";
-            this.theFileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colDocumentName
-            // 
-            resources.ApplyResources(this.colDocumentName, "colDocumentName");
-            this.colDocumentName.Name = "colDocumentName";
-            this.colDocumentName.ReadOnly = true;
-            // 
-            // CreatedDateTime
-            // 
-            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
-            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
-            this.CreatedDateTime.Name = "CreatedDateTime";
-            this.CreatedDateTime.ReadOnly = true;
-            // 
-            // createdDateDataGridViewTextBoxColumn
-            // 
-            this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.createdDateDataGridViewTextBoxColumn.DataPropertyName = "CreatedDate";
-            resources.ApplyResources(this.createdDateDataGridViewTextBoxColumn, "createdDateDataGridViewTextBoxColumn");
-            this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
-            this.createdDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thePathDataGridViewTextBoxColumn
-            // 
-            this.thePathDataGridViewTextBoxColumn.DataPropertyName = "ThePath";
-            resources.ApplyResources(this.thePathDataGridViewTextBoxColumn, "thePathDataGridViewTextBoxColumn");
-            this.thePathDataGridViewTextBoxColumn.Name = "thePathDataGridViewTextBoxColumn";
-            this.thePathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // theExtensionDataGridViewTextBoxColumn
-            // 
-            this.theExtensionDataGridViewTextBoxColumn.DataPropertyName = "TheExtension";
-            resources.ApplyResources(this.theExtensionDataGridViewTextBoxColumn, "theExtensionDataGridViewTextBoxColumn");
-            this.theExtensionDataGridViewTextBoxColumn.Name = "theExtensionDataGridViewTextBoxColumn";
-            this.theExtensionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // theFileBindingSource
-            // 
-            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
             // 
             // panelImagePreview
             // 
@@ -354,10 +303,6 @@
             resources.ApplyResources(this.textBoxDocumentTags, "textBoxDocumentTags");
             this.textBoxDocumentTags.Name = "textBoxDocumentTags";
             // 
-            // documentBindingSource
-            // 
-            this.documentBindingSource.DataSource = typeof(LegeDoos.LDM.Document);
-            // 
             // textBoxDocumentDescription
             // 
             this.textBoxDocumentDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "Description", true));
@@ -438,6 +383,43 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
+            // theFileBindingSource
+            // 
+            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
+            // 
+            // documentBindingSource
+            // 
+            this.documentBindingSource.DataSource = typeof(LegeDoos.LDM.Document);
+            // 
+            // SourceFileName
+            // 
+            this.SourceFileName.DataPropertyName = "SourceFileName";
+            resources.ApplyResources(this.SourceFileName, "SourceFileName");
+            this.SourceFileName.Name = "SourceFileName";
+            this.SourceFileName.ReadOnly = true;
+            // 
+            // colDocumentName
+            // 
+            resources.ApplyResources(this.colDocumentName, "colDocumentName");
+            this.colDocumentName.Name = "colDocumentName";
+            this.colDocumentName.ReadOnly = true;
+            // 
+            // CreatedDateTime
+            // 
+            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
+            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
+            this.CreatedDateTime.Name = "CreatedDateTime";
+            this.CreatedDateTime.ReadOnly = true;
+            // 
+            // createdDateDataGridViewTextBoxColumn
+            // 
+            this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.createdDateDataGridViewTextBoxColumn.DataPropertyName = "CreatedDate";
+            resources.ApplyResources(this.createdDateDataGridViewTextBoxColumn, "createdDateDataGridViewTextBoxColumn");
+            this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
+            this.createdDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -453,7 +435,6 @@
             this.tableLayoutPanelLeftRight.ResumeLayout(false);
             this.tableLayoutPanelFileList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
             this.panelImagePreview.ResumeLayout(false);
             this.panelImagePreview.PerformLayout();
             this.toolStripPreview.ResumeLayout(false);
@@ -462,8 +443,9 @@
             this.tableLayoutRight.ResumeLayout(false);
             this.panelDocumentInfo.ResumeLayout(false);
             this.panelDocumentInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             this.panelActionsAll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,11 +497,12 @@
         private System.Windows.Forms.BindingSource documentBindingSource;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn theFileNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SourceFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDocumentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thePathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theExtensionDataGridViewTextBoxColumn;
     
     }
 }

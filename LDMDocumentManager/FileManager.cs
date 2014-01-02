@@ -25,10 +25,7 @@ namespace LegeDoos.LDM
         public event MainSelectedFileChange MainSelectedFileChangeEvent;
         public event CurrentDocumentChange CurrentDocumentChange;
 
-        private string m_NumberSequenceIdDocNo = "DOCUMENTNUMBER";
-        private string m_NumberSequenceSaveLocation = @"d:\a\"; //todo
-        private NumberSequence DocumentNumberSequence;
-
+       
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
         /// </summary>
@@ -52,8 +49,15 @@ namespace LegeDoos.LDM
             TheFileList = new List<TheFile>();
             DocumentList = new List<Document>();
             CurrentDocument = getNewDocument();
-            NumberSequenceManager.TheNumberSequenceManager.ConfigLocation = m_NumberSequenceSaveLocation;
+            InitNumberSequenceManager();
         }
+
+        private void InitNumberSequenceManager()
+        {
+
+            NumberSequenceManager.TheNumberSequenceManager.ConfigLocation = GlobalSettings.theSettings.SettingsFolder;
+        }
+
         /// <summary>
         /// Get a new document from te list
         /// </summary>
@@ -82,7 +86,7 @@ namespace LegeDoos.LDM
             Document retVal = null;
             var localDocuments =
                 from Document in DocumentList
-                where (Document.FileList.FirstOrDefault(f => f.PathAndFileName == _file.PathAndFileName) != null)
+                where (Document.FileList.FirstOrDefault(f => f.SourcePathAndFileName == _file.SourcePathAndFileName) != null)
                 select Document;
 
             retVal = localDocuments.FirstOrDefault();
@@ -202,7 +206,7 @@ namespace LegeDoos.LDM
         private void FileListSelectionChanged(object sender, EventArgs e)
         {
             TheFile item;
-            string oldFileName = MainSelectedFile != null ? MainSelectedFile.TheFileName : "";
+            string oldFileName = MainSelectedFile != null ? MainSelectedFile.SourceFileName : "";
             Guid oldGuid = CurrentDocument != null ? CurrentDocument.Id : Guid.Empty;
 
             //fill list of selected items
@@ -216,13 +220,13 @@ namespace LegeDoos.LDM
             if (SelectedFiles.Count == 0)
                 return;
 
-            SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ThenBy(f => f.TheFileName).ToList();
+            SelectedFiles = SelectedFiles.OrderBy(f => f.CreatedDateTime).ThenBy(f => f.SourceFileName).ToList();
 
             //determine main file (first created from selected)
             MainSelectedFile = SelectedFiles.FirstOrDefault();
 
             //trigger event so the new immage can be loaded
-            if (MainSelectedFile.TheFileName != oldFileName && MainSelectedFileChangeEvent != null)
+            if (MainSelectedFile.SourceFileName != oldFileName && MainSelectedFileChangeEvent != null)
                 MainSelectedFileChangeEvent();
             
             //load values
@@ -262,7 +266,7 @@ namespace LegeDoos.LDM
                 DataGridViewRow row = m_FileListDataGridView.Rows[e.RowIndex];
                 
                 TheFile FileLocal;
-                FileLocal = TheFileList.FirstOrDefault(f => f.TheFileName == row.Cells[0].Value);
+                FileLocal = TheFileList.FirstOrDefault(f => f.SourceFileName == row.Cells[0].Value);
 
                 Document documentLocal;
                 documentLocal = getDocumentForFile(FileLocal);
@@ -282,9 +286,14 @@ namespace LegeDoos.LDM
 
             foreach (Document d in docs)
             {
-                //test save
-                string test = @"d:\a\test.xml";
-                d.SaveToFile(test);
+                if (d.Process())
+                {
+                    //remove from list
+                }
+                else
+                {
+                    //show message?
+                }
             }
         }
     }

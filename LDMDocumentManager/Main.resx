@@ -219,11 +219,11 @@
   <data name="tableLayoutPanelFileList.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="theFileNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+  <metadata name="SourceFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SourceFileName.HeaderText" xml:space="preserve">
     <value>File name</value>
-  </data>
-  <data name="theFileNameDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
   </data>
   <metadata name="colDocumentName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -247,18 +247,6 @@
     <value>YYYYMMDD</value>
   </data>
   <data name="createdDateDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="thePathDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>ThePath</value>
-  </data>
-  <data name="thePathDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="theExtensionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>TheExtension</value>
-  </data>
-  <data name="theExtensionDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <metadata name="theFileBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -435,7 +423,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStripPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>687, 25</value>
+    <value>685, 25</value>
   </data>
   <data name="toolStripPreview.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -465,7 +453,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>687, 609</value>
+    <value>685, 609</value>
   </data>
   <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -492,7 +480,7 @@
     <value>449, 4</value>
   </data>
   <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>687, 609</value>
+    <value>685, 609</value>
   </data>
   <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -516,7 +504,7 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 612</value>
+    <value>75, 612</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 1</value>
@@ -936,7 +924,7 @@
     <value>3, 3</value>
   </data>
   <data name="panelDocumentInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 603</value>
+    <value>272, 603</value>
   </data>
   <data name="panelDocumentInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -957,13 +945,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1143, 4</value>
+    <value>1141, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 609</value>
+    <value>278, 609</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1011,7 +999,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,282" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,284" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveDocuments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1109,6 +1097,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1429, 697</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Document Manager</value>
   </data>
@@ -1154,48 +1145,6 @@
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>theFileNameDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;theFileNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colDocumentName.Name" xml:space="preserve">
-    <value>colDocumentName</value>
-  </data>
-  <data name="&gt;&gt;colDocumentName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
-    <value>CreatedDateTime</value>
-  </data>
-  <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>createdDateDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;thePathDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>thePathDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;thePathDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;theExtensionDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>theExtensionDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;theExtensionDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;theFileBindingSource.Name" xml:space="preserve">
-    <value>theFileBindingSource</value>
-  </data>
-  <data name="&gt;&gt;theFileBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
     <value>btnPrevious</value>
   </data>
@@ -1232,11 +1181,41 @@
   <data name="&gt;&gt;labelImageName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;theFileBindingSource.Name" xml:space="preserve">
+    <value>theFileBindingSource</value>
+  </data>
+  <data name="&gt;&gt;theFileBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;documentBindingSource.Name" xml:space="preserve">
     <value>documentBindingSource</value>
   </data>
   <data name="&gt;&gt;documentBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SourceFileName.Name" xml:space="preserve">
+    <value>SourceFileName</value>
+  </data>
+  <data name="&gt;&gt;SourceFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colDocumentName.Name" xml:space="preserve">
+    <value>colDocumentName</value>
+  </data>
+  <data name="&gt;&gt;colDocumentName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreatedDateTime.Name" xml:space="preserve">
+    <value>CreatedDateTime</value>
+  </data>
+  <data name="&gt;&gt;CreatedDateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>createdDateDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;createdDateDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
