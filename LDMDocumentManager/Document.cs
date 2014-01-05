@@ -27,7 +27,8 @@ namespace LegeDoos.LDM
         { 
             get
             {
-                return CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}_{1}_{2}_{3}", CreatedDateYYYYMMDD, Sender, Category, DocumentNumberAsString) : "";
+                string RetVal = CreatedDateYYYYMMDD != null || Sender != null || Category != null ? string.Format("{0}-{1}-{2}-{3}", CreatedDateYYYYMMDD, Sender, Category, DocumentNumberAsString) : "";
+                return RetVal.Replace(' ', '_');
             }
         }
         public String CreatedDateYYYYMMDD { get; set; }
@@ -39,6 +40,14 @@ namespace LegeDoos.LDM
         public Boolean UnSaved { get; set; }
         public static XmlSerializer xs;
         private const string NumberSequenceIdDocNo = "DOCUMENTNUMBER";
+        private string DestinationFolder 
+        {
+            get
+            {
+                string RetVal = GlobalSettings.theSettings.DestPath != null && Sender != null ? Path.Combine(GlobalSettings.theSettings.DestPath, Sender) : string.Empty;
+                return RetVal.Replace(' ', '_');
+            }
+        }
 
         public Document()
         {
@@ -125,42 +134,100 @@ namespace LegeDoos.LDM
                     xs.Serialize(sw, this);
                 }
             }
+            if (File.Exists(_filename))
+            {
+                File.SetAttributes(_filename, FileAttributes.Hidden);
+            }
+
         }
 
         internal bool Process()
         {
             bool retVal = true;
 
-            //create or validate destination
-            retVal = CreateDestinationFolder();
-
-            //set document guid and number
-            if (retVal)
+            try
             {
-                Id = Guid.NewGuid();
-                DocumentNumber = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(NumberSequenceIdDocNo).GetNextNum();
+                //create or validate destination
+                retVal = CreateDestinationFolder();
+
+                //set document guid and number
+                if (retVal)
+                {
+                    Id = Guid.NewGuid();
+                    DocumentNumber = NumberSequenceManager.TheNumberSequenceManager.GetNumberSequence(NumberSequenceIdDocNo).GetNextNum();
+                }
+
+                //set file properties
+                SetFilePoperties();
+
+                //move files
+                MoveFilesToDest();
+                
+                //set file attributes
+
+                //save xml
+                SaveMetaDataToFile(Path.Combine(DestinationFolder, string.Format("{0}.xml", DocumentName)));
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+            /*finally
+            {
+                if (retVal)
+                {
+                    //delete files
+                    DeleteSourceFiles();
+                }
+            }*/
 
-            //set file properties
+            return retVal;
+        }
 
-            //move files
+        private void MoveFilesToDest()
+        {
+            foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
+            {
+                f.Move(DestinationFolder);
+            }
+        }
 
-            //save xml
+        /*private void DeleteSourceFiles()
+        {
+            foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
+            {
+                f.DeleteSource(DestinationFolder);
+            }
+        }
 
-            //test save
-            string test = @"d:\a\test.xml";
-            //SaveMetaDataToFile(test);
+        private void CopyFilesToDest()
+        {
+            foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
+            {
+                f.CopyToDest(DestinationFolder);
+            }
+        }*/
 
+        private void SetFilePoperties()
+        {
+            int i = 1;
 
-            throw new NotImplementedException();
+            foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
+            {
+                //todo: handle double sided docs
+                
+                f.DestFileNumber = i;
+                f.DestFileName = string.Format("{0}-{1}{2}", DocumentName, f.DestFileNumberStrPad(), f.SourceExtension);
+                i++;
+            }
         }
 
         private bool CreateDestinationFolder()
         {
             bool retVal;
-            string PathLocal = Path.Combine(GlobalSettings.theSettings.DestPath, Sender);
-
-            if (Directory.Exists(PathLocal))
+            
+            if (Directory.Exists(DestinationFolder))
             {
                 retVal = true;
             }
@@ -169,7 +236,7 @@ namespace LegeDoos.LDM
                 try
                 {
                     //create folder
-                    Directory.CreateDirectory(PathLocal);
+                    Directory.CreateDirectory(DestinationFolder);
                     retVal = true;
                 }
                 catch

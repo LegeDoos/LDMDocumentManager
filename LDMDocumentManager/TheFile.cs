@@ -17,7 +17,7 @@ namespace LegeDoos.LDM
         public string CreatedDate { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public string DestFileName { get; set; }
-        public string DestFileNumber { get; set; }
+        public int DestFileNumber { get; set; }
 
         public TheFile(string FileName)
         {
@@ -67,6 +67,46 @@ namespace LegeDoos.LDM
                 //#15
                 return "";
             }
+        }
+
+        /*internal void CopyToDest(string DestinationFolder)
+        {
+            string DestinationFileLocal = Path.Combine(DestinationFolder, DestFileName);
+
+            if (File.Exists(DestinationFileLocal))
+                throw new FileLoadException(String.Format("File {0} already exists", DestinationFileLocal));
+
+            if (File.Exists(SourcePathAndFileName))
+            {
+                File.Copy(SourcePathAndFileName, DestinationFileLocal);
+            }
+            else
+                throw new FileLoadException(String.Format("File {0} does not exists", DestinationFileLocal));
+        }*/
+
+        public string DestFileNumberStrPad()
+        {
+            return DestFileNumber.ToString().PadLeft(3, '0');
+        }
+
+        /*internal void DeleteSource(string DestinationFolder)
+        {
+            File.Delete(SourcePathAndFileName);
+        }*/
+
+        internal void Move(string DestinationFolder)
+        {
+            string DestinationFileLocal = Path.Combine(DestinationFolder, DestFileName);
+
+            if (File.Exists(DestinationFileLocal))
+                throw new FileLoadException(String.Format("File {0} already exists", DestinationFileLocal));
+
+            if (File.Exists(SourcePathAndFileName))
+            {
+                File.Move(SourcePathAndFileName, DestinationFileLocal);
+            }
+            else
+                throw new FileLoadException(String.Format("File {0} does not exists", DestinationFileLocal));
         }
     }
 } 
