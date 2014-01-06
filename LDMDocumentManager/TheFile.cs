@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using LegeDoos.Utils;
 
 namespace LegeDoos.LDM
@@ -18,6 +19,7 @@ namespace LegeDoos.LDM
         public DateTime CreatedDateTime { get; set; }
         public string DestFileName { get; set; }
         public int DestFileNumber { get; set; }
+        private Image m_Image;
 
         public TheFile(string FileName)
         {
@@ -69,7 +71,7 @@ namespace LegeDoos.LDM
             }
         }
 
-        /*internal void CopyToDest(string DestinationFolder)
+        internal void CopyToDest(string DestinationFolder)
         {
             string DestinationFileLocal = Path.Combine(DestinationFolder, DestFileName);
 
@@ -82,17 +84,17 @@ namespace LegeDoos.LDM
             }
             else
                 throw new FileLoadException(String.Format("File {0} does not exists", DestinationFileLocal));
-        }*/
+        }
 
         public string DestFileNumberStrPad()
         {
             return DestFileNumber.ToString().PadLeft(3, '0');
         }
 
-        /*internal void DeleteSource(string DestinationFolder)
+        internal void DeleteSource(string DestinationFolder)
         {
             File.Delete(SourcePathAndFileName);
-        }*/
+        }
 
         internal void Move(string DestinationFolder)
         {
@@ -107,6 +109,23 @@ namespace LegeDoos.LDM
             }
             else
                 throw new FileLoadException(String.Format("File {0} does not exists", DestinationFileLocal));
+        }
+        /// <summary>
+        /// Load image once without locking the file
+        /// </summary>
+        /// <returns></returns>
+        public Image Image()
+        {       
+            if (!ImageManagement.IsImage(m_Image) && File.Exists(SourcePathAndFileName))
+            {
+                using (var fs = new System.IO.FileStream(SourcePathAndFileName, System.IO.FileMode.Open))
+                {
+                    var bmp = new Bitmap(fs);
+                    m_Image = (Bitmap)bmp.Clone();
+                    bmp.Dispose();
+                }
+            }
+            return m_Image;
         }
     }
 } 

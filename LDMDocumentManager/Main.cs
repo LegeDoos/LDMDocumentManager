@@ -28,11 +28,6 @@ namespace LDM
             m_FileManager.CurrentDocumentChange += new CurrentDocumentChange(LoadDocument);
         }
 
-        private EventHandler LoadImage()
-        {
-            throw new NotImplementedException();
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
 
@@ -83,13 +78,12 @@ namespace LDM
         private void loadImage()
         {
             string fileNameLocal = string.Empty;
-
+            
             if (m_FileManager.SelectedFiles != null && (m_ImageIndex >= 0 && m_ImageIndex < m_FileManager.SelectedFiles.Count))
             {
-                fileNameLocal = m_FileManager.SelectedFiles[m_ImageIndex].SourcePathAndFileName;
-                if (fileNameLocal != string.Empty && File.Exists(fileNameLocal))
+                pictureBoxPreview.Image = m_FileManager.SelectedFiles[m_ImageIndex].Image();
+                if (pictureBoxPreview.Image != null)
                 {
-                    pictureBoxPreview.Image = new Bitmap(fileNameLocal);
                     labelImageName.Text = string.Format("Preview of: {0}", m_FileManager.SelectedFiles[m_ImageIndex].SourceFileName);
                     labelImageName.Visible = true;
                 }

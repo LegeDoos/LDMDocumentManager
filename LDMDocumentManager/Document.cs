@@ -48,6 +48,7 @@ namespace LegeDoos.LDM
                 return RetVal.Replace(' ', '_');
             }
         }
+        public bool Processed { get; set; }
 
         public Document()
         {
@@ -160,11 +161,15 @@ namespace LegeDoos.LDM
                 //set file properties
                 SetFilePoperties();
 
-                //move files
-                MoveFilesToDest();
+                //copy files
+                CopyFilesToDest();
                 
                 //set file attributes
-
+                SaveFileAttributes();
+                
+                //set processed to true
+                Processed = true;
+                
                 //save xml
                 SaveMetaDataToFile(Path.Combine(DestinationFolder, string.Format("{0}.xml", DocumentName)));
             }
@@ -173,16 +178,21 @@ namespace LegeDoos.LDM
                 MessageBox.Show(e.Message);
                 return false;
             }
-            /*finally
+            finally
             {
                 if (retVal)
                 {
                     //delete files
                     DeleteSourceFiles();
                 }
-            }*/
+            }
 
             return retVal;
+        }
+
+        private void SaveFileAttributes()
+        {
+           // throw new NotImplementedException();
         }
 
         private void MoveFilesToDest()
@@ -193,7 +203,7 @@ namespace LegeDoos.LDM
             }
         }
 
-        /*private void DeleteSourceFiles()
+        private void DeleteSourceFiles()
         {
             foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
             {
@@ -207,7 +217,7 @@ namespace LegeDoos.LDM
             {
                 f.CopyToDest(DestinationFolder);
             }
-        }*/
+        }
 
         private void SetFilePoperties()
         {

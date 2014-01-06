@@ -284,17 +284,36 @@ namespace LegeDoos.LDM
                 where Document.UnSaved == false
                 select Document;
 
+            List<Document> delete = new List<Document>();
+
             foreach (Document d in docs)
             {
-                if (d.Process())
+                if (!d.Process())
                 {
-                    //remove from list
-                }
-                else
-                {
-                    //show message?
+                    //show message
+                    MessageBox.Show(string.Format("Something went wrong processing {0}", d.DocumentName));
                 }
             }
+
+            //delete files from list
+            var docsToDelete =
+                from Document in DocumentList
+                where Document.Processed == true
+                select Document;
+
+            foreach (Document d in docsToDelete)
+            {
+                foreach (TheFile f in d.FileList)
+                {
+                    TheFileList.Remove(f);
+                }
+            }
+
+            //delete docs
+            DocumentList.RemoveAll(d => d.Processed = true);
+            
+            //reload grid
+            InitGridView();
         }
     }
 }

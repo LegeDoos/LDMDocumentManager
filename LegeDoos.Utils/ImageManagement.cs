@@ -57,6 +57,29 @@ namespace LegeDoos.Utils
 
             return rotatedBmp;
         }
+        /// <summary>
+        /// Check if an image is an image
+        /// </summary>
+        /// <param name="Image"></param>
+        /// <returns>True if it is a correct image</returns>
+        public static bool IsImage(Image Image)
+        {
+            if (Image == null)
+                return false;
+
+            //try to get f.e. the size property
+            try
+            {
+                Size size = Image.Size;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
         /*
         /// <summary>
         /// Creates a new Image containing the same image only rotated
