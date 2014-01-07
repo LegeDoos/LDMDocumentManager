@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileManagement.cs" />
     <Compile Include="ImageManagement.cs" />
     <Compile Include="MySortableBindingList.cs" />
     <Compile Include="NumberSequence.cs" />

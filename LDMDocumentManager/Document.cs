@@ -49,7 +49,10 @@ namespace LegeDoos.LDM
             }
         }
         public bool Processed { get; set; }
-
+        
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Document()
         {
             FileList = new List<TheFile>();
@@ -60,6 +63,10 @@ namespace LegeDoos.LDM
             CreatedDateYYYYMMDD = string.Empty;
         }
 
+        /// <summary>
+        /// Add a file to the list
+        /// </summary>
+        /// <param name="_file">The file to add</param>
         public void AddFileToList(TheFile _file)
         {
             if (FileList != null)
@@ -68,6 +75,10 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Add a list of files to the file list
+        /// </summary>
+        /// <param name="_fileList">Files to add</param>
         public void AddFileList(List<TheFile> _fileList)
         {
             if (_fileList != null)
@@ -76,7 +87,10 @@ namespace LegeDoos.LDM
             }
         }
 
-
+        /// <summary>
+        /// Validate the document
+        /// </summary>
+        /// <returns>True if validation is successfull</returns>
         private bool Validate()
         {
             bool retVal = true;
@@ -95,6 +109,11 @@ namespace LegeDoos.LDM
             return retVal;
         }
 
+        /// <summary>
+        /// Save the document (metadata)
+        /// </summary>
+        /// <param name="_fileList">Files to add to the document</param>
+        /// <returns>True if successfull</returns>
         internal bool Save(List<TheFile> _fileList)
         {
             bool retVal = true;
@@ -115,6 +134,10 @@ namespace LegeDoos.LDM
             return retVal;
         }
 
+        /// <summary>
+        /// Init the document properties based on a file
+        /// </summary>
+        /// <param name="_file">The file to base the properties on</param>
         internal void InitFromFile(TheFile _file)
         {
             CreatedDateYYYYMMDD = _file.GetCreatedDateFromFileName == string.Empty ? _file.CreatedDate : _file.GetCreatedDateFromFileName;            
@@ -140,6 +163,10 @@ namespace LegeDoos.LDM
 
         }
 
+        /// <summary>
+        /// Process the document. Processing means set correct file properties and save on the correct location
+        /// </summary>
+        /// <returns>true if successfull</returns>
         internal bool Process()
         {
             bool retVal = true;
@@ -188,6 +215,9 @@ namespace LegeDoos.LDM
             return retVal;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         private void SaveFileAttributes()
         {
             string DestinationFileLocal;
@@ -225,6 +255,9 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Set the metadata of the files
+        /// </summary>
         private void SetFilePoperties()
         {
             int i = 1;

@@ -54,7 +54,6 @@ namespace LegeDoos.LDM
 
         private void InitNumberSequenceManager()
         {
-
             NumberSequenceManager.TheNumberSequenceManager.ConfigLocation = GlobalSettings.theSettings.SettingsFolder;
         }
 
@@ -105,6 +104,11 @@ namespace LegeDoos.LDM
             m_FileListDataGridView.DataSource = TheFileList.OrderBy(TheFile => TheFile.CreatedDateTime).ToList();
         }
 
+        /// <summary>
+        /// Add a file to the file list
+        /// </summary>
+        /// <param name="FileName">File to add</param>
+        /// <returns>True if successfull</returns>
         public Boolean AddFileToList(string FileName)
         {
             Boolean retVal = false;
@@ -131,6 +135,9 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Add files to the file list using an open dialog
+        /// </summary>
         public void AddFilesOpenDialog()
         {
             if (TheFileList != null)
@@ -155,6 +162,9 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Add files from  the source dir to the file list
+        /// </summary>
         public void AddFilesFromSourceDir()
         {
             if (TheFileList != null)
@@ -175,6 +185,9 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public void AddFilesFromShell()
         {
             if (TheFileList != null)
@@ -183,6 +196,9 @@ namespace LegeDoos.LDM
             }
         }
 
+        /// <summary>
+        /// Check if the file list is empty
+        /// </summary>
         private void CheckFileListEmpty()
         {
             if (TheFileList.Count > 0)
@@ -259,6 +275,11 @@ namespace LegeDoos.LDM
             m_FileListDataGridView.Refresh();
         }
 
+        /// <summary>
+        /// Set the correct value in the grid for the document name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SetDataGridRowValue(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -276,7 +297,9 @@ namespace LegeDoos.LDM
             }
         }
 
-
+        /// <summary>
+        /// Process the documents: save everything on the correct location
+        /// </summary>
         internal void ProcessDocuments()
         {
             var docs =
