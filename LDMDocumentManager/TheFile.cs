@@ -50,7 +50,7 @@ namespace LegeDoos.LDM
             SourceFileName = Path.GetFileName(SourcePathAndFileName);
             SourceExtension = Path.GetExtension(SourcePathAndFileName);
             CreatedDateTime = File.GetCreationTimeUtc(SourcePathAndFileName);
-            CreatedDate = GetCreatedDateFromFileName == string.Empty ? StringManagement.DateToString(CreatedDateTime) : GetCreatedDateFromFileName;
+            CreatedDate = StringManagement.DateToString(CreatedDateTime);
         }
 
         public string GetCreatedDateFromFileName

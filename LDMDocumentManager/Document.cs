@@ -117,9 +117,7 @@ namespace LegeDoos.LDM
 
         internal void InitFromFile(TheFile _file)
         {
-            CreatedDateYYYYMMDD = _file.CreatedDate;
-            Sender = _file.GetSenderFromPath;
-            Category = _file.GetCategoryFromFileName;
+            CreatedDateYYYYMMDD = _file.GetCreatedDateFromFileName == string.Empty ? _file.CreatedDate : _file.GetCreatedDateFromFileName;            
         }
 
         /// <summary>
