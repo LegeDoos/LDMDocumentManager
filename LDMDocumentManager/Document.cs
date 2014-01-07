@@ -165,7 +165,7 @@ namespace LegeDoos.LDM
                 CopyFilesToDest();
                 
                 //set file attributes
-                SaveFileAttributes();
+                //SaveFileAttributes(); issue #22
                 
                 //set processed to true
                 Processed = true;
@@ -192,7 +192,15 @@ namespace LegeDoos.LDM
 
         private void SaveFileAttributes()
         {
-           // throw new NotImplementedException();
+            string DestinationFileLocal;
+            foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
+            {
+                DestinationFileLocal = Path.Combine(DestinationFolder, f.DestFileName);
+                if (File.Exists(DestinationFileLocal))
+                {
+                    new NotImplementedException();
+                }
+            }
         }
 
         private void MoveFilesToDest()

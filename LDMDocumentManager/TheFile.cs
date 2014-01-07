@@ -50,24 +50,16 @@ namespace LegeDoos.LDM
             SourceFileName = Path.GetFileName(SourcePathAndFileName);
             SourceExtension = Path.GetExtension(SourcePathAndFileName);
             CreatedDateTime = File.GetCreationTimeUtc(SourcePathAndFileName);
-            CreatedDate = StringManagement.DateToString(CreatedDateTime);
+            CreatedDate = GetCreatedDateFromFileName == string.Empty ? StringManagement.DateToString(CreatedDateTime) : GetCreatedDateFromFileName;
         }
 
-        public string GetSenderFromPath 
-        { 
-            get 
-            {
-                //#15
-                return "";
-            } 
-        }
-
-        public string GetCategoryFromFileName 
-        { 
+        public string GetCreatedDateFromFileName
+        {
             get
             {
-                //#15
-                return "";
+                int dateFromFileName = 0;
+                bool isNumeric = int.TryParse(SourceFileName.Substring(0, 8), out dateFromFileName);
+                return isNumeric ? dateFromFileName.ToString() : string.Empty;
             }
         }
 
