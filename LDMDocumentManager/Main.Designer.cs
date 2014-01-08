@@ -42,6 +42,9 @@
             this.tableLayoutPanelLeftRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFileList = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewFileList = new System.Windows.Forms.DataGridView();
+            this.SourceFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelImagePreview = new System.Windows.Forms.Panel();
             this.toolStripPreview = new System.Windows.Forms.ToolStrip();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
@@ -71,12 +74,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SourceFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelBack.SuspendLayout();
             this.tableLayoutPanelLeftRight.SuspendLayout();
@@ -187,6 +187,27 @@
             this.dataGridViewFileList.Name = "dataGridViewFileList";
             this.dataGridViewFileList.ReadOnly = true;
             this.dataGridViewFileList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // SourceFileName
+            // 
+            this.SourceFileName.DataPropertyName = "SourceFileName";
+            resources.ApplyResources(this.SourceFileName, "SourceFileName");
+            this.SourceFileName.Name = "SourceFileName";
+            this.SourceFileName.ReadOnly = true;
+            // 
+            // colDocumentName
+            // 
+            resources.ApplyResources(this.colDocumentName, "colDocumentName");
+            this.colDocumentName.Name = "colDocumentName";
+            this.colDocumentName.ReadOnly = true;
+            // 
+            // CreatedDateTime
+            // 
+            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
+            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
+            this.CreatedDateTime.Name = "CreatedDateTime";
+            this.CreatedDateTime.ReadOnly = true;
             // 
             // panelImagePreview
             // 
@@ -383,35 +404,6 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
-            // theFileBindingSource
-            // 
-            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
-            // 
-            // documentBindingSource
-            // 
-            this.documentBindingSource.DataSource = typeof(LegeDoos.LDM.Document);
-            // 
-            // SourceFileName
-            // 
-            this.SourceFileName.DataPropertyName = "SourceFileName";
-            resources.ApplyResources(this.SourceFileName, "SourceFileName");
-            this.SourceFileName.Name = "SourceFileName";
-            this.SourceFileName.ReadOnly = true;
-            // 
-            // colDocumentName
-            // 
-            resources.ApplyResources(this.colDocumentName, "colDocumentName");
-            this.colDocumentName.Name = "colDocumentName";
-            this.colDocumentName.ReadOnly = true;
-            // 
-            // CreatedDateTime
-            // 
-            this.CreatedDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CreatedDateTime.DataPropertyName = "CreatedDateTime";
-            resources.ApplyResources(this.CreatedDateTime, "CreatedDateTime");
-            this.CreatedDateTime.Name = "CreatedDateTime";
-            this.CreatedDateTime.ReadOnly = true;
-            // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -419,6 +411,14 @@
             resources.ApplyResources(this.createdDateDataGridViewTextBoxColumn, "createdDateDataGridViewTextBoxColumn");
             this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
             this.createdDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // theFileBindingSource
+            // 
+            this.theFileBindingSource.DataSource = typeof(LegeDoos.LDM.TheFile);
+            // 
+            // documentBindingSource
+            // 
+            this.documentBindingSource.DataSource = typeof(LegeDoos.LDM.Document);
             // 
             // Main
             // 

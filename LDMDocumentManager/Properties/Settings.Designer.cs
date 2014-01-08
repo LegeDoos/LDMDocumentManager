@@ -25,7 +25,7 @@ namespace LegeDoos.LDM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SourcePath {
             get {
                 return ((string)(this["SourcePath"]));
@@ -37,7 +37,7 @@ namespace LegeDoos.LDM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string DestinationPath {
             get {
                 return ((string)(this["DestinationPath"]));
@@ -49,7 +49,7 @@ namespace LegeDoos.LDM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LastStaticDate {
             get {
                 return ((string)(this["LastStaticDate"]));
@@ -61,7 +61,6 @@ namespace LegeDoos.LDM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int DocumentNumber {
             get {
                 return ((int)(this["DocumentNumber"]));
