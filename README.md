@@ -19,6 +19,8 @@ After archiving the files you can view them in Windows Explorer. Using the previ
 ##Links
 **Installation**          http://ldm.legedoos.nl
 
+**Version history**       https://github.com/LegeDoos/LDMDocumentManager/issues/milestones?state=closed 
+
 **Source**                https://github.com/LegeDoos/LDMDocumentManager
 
 **Copyright and Licence** https://github.com/LegeDoos/LDMDocumentManager/blob/master/LICENSE.md
