@@ -20,6 +20,8 @@ namespace LegeDoos.LDM
         public string DestFileName { get; set; }
         public int DestFileNumber { get; set; }
         private Image m_Image;
+        private Boolean Isimage { get; set; }
+        private Object ImageLock = new Object();
 
         public TheFile(string FileName)
         {
@@ -86,6 +88,7 @@ namespace LegeDoos.LDM
         internal void DeleteSource(string DestinationFolder)
         {
             File.Delete(SourcePathAndFileName);
+            m_Image.Dispose();
         }
 
         internal void Move(string DestinationFolder)
@@ -107,17 +110,32 @@ namespace LegeDoos.LDM
         /// </summary>
         /// <returns></returns>
         public Image Image()
-        {       
-            if (!ImageManagement.IsImage(m_Image) && File.Exists(SourcePathAndFileName))
+        {
+            //make thread safe
+            lock (ImageLock)
             {
-                using (var fs = new System.IO.FileStream(SourcePathAndFileName, System.IO.FileMode.Open))
+                if (!Isimage && File.Exists(SourcePathAndFileName))
                 {
-                    var bmp = new Bitmap(fs);
-                    m_Image = (Bitmap)bmp.Clone();
-                    bmp.Dispose();
+                    using (var fs = new System.IO.FileStream(SourcePathAndFileName, System.IO.FileMode.Open))
+                    {
+                        var bmp = new Bitmap(fs);
+                        m_Image = (Bitmap)bmp.Clone();
+                        bmp.Dispose();
+                        Isimage = true;
+                    }
                 }
             }
             return m_Image;
+        }
+
+        /// <summary>
+        /// Clear the image and fre memory
+        /// </summary>
+        public void ClearImage()
+        {
+            m_Image.Dispose();
+            m_Image = null;
+            Isimage = false;
         }
     }
 } 

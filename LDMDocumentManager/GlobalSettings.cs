@@ -14,6 +14,7 @@ namespace LegeDoos.LDM
         public string SourcePath { get; set; }
         public string DestPath {  get;  set; }
         public string LastStaticDate {  get;  set; }
+        public bool DisableImageCache { get; set; }
         private const string SettingsFolderRelative = "LDMSettings";
         public string SettingsFolder
         {
@@ -49,6 +50,7 @@ namespace LegeDoos.LDM
             DestPath = Properties.Settings.Default.DestinationPath;
 #endif
             LastStaticDate = Properties.Settings.Default.LastStaticDate;
+            DisableImageCache = Properties.Settings.Default.DisableImageCache;
 
             if (!Directory.Exists(SettingsFolder))
             {

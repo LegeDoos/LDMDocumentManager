@@ -25,6 +25,7 @@ namespace LegeDoos.LDM
         public event MainSelectedFileChange MainSelectedFileChangeEvent;
         public event CurrentDocumentChange CurrentDocumentChange;
 
+        private ImageCacheThreading ImageCacheThreading = null;
        
         /// <summary>
         /// Constructor accepts DataGridView to show the file list in
@@ -102,6 +103,11 @@ namespace LegeDoos.LDM
         private void InitGridView()
         {
             m_FileListDataGridView.DataSource = TheFileList.OrderBy(TheFile => TheFile.CreatedDateTime).ToList();
+            
+            //cache images
+            ImageCacheThreading = new ImageCacheThreading(this);
+            ImageCacheThreading.StartThread();
+           
         }
 
         /// <summary>

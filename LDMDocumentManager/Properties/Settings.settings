@@ -11,8 +11,8 @@
     <Setting Name="LastStaticDate" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DocumentNumber" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="DisableImageCache" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

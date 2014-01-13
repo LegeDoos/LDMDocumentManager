@@ -96,6 +96,7 @@
     <Compile Include="Document.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="GlobalSettings.cs" />
+    <Compile Include="ImageCacheHandler.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

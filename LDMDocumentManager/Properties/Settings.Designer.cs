@@ -61,12 +61,13 @@ namespace LegeDoos.LDM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int DocumentNumber {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DisableImageCache {
             get {
-                return ((int)(this["DocumentNumber"]));
+                return ((bool)(this["DisableImageCache"]));
             }
             set {
-                this["DocumentNumber"] = value;
+                this["DisableImageCache"] = value;
             }
         }
     }
