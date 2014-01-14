@@ -74,6 +74,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.checkBoxDoubleSided = new System.Windows.Forms.CheckBox();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -286,6 +287,7 @@
             // panelDocumentInfo
             // 
             this.panelDocumentInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDocumentInfo.Controls.Add(this.checkBoxDoubleSided);
             this.panelDocumentInfo.Controls.Add(this.btnDelete);
             this.panelDocumentInfo.Controls.Add(this.btnApply);
             this.panelDocumentInfo.Controls.Add(this.textBoxDocumentTags);
@@ -404,6 +406,13 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
+            // checkBoxDoubleSided
+            // 
+            resources.ApplyResources(this.checkBoxDoubleSided, "checkBoxDoubleSided");
+            this.checkBoxDoubleSided.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.documentBindingSource, "DoubleSided", true));
+            this.checkBoxDoubleSided.Name = "checkBoxDoubleSided";
+            this.checkBoxDoubleSided.UseVisualStyleBackColor = true;
+            // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -503,6 +512,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDocumentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckBox checkBoxDoubleSided;
     
     }
 }

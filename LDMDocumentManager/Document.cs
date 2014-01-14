@@ -36,6 +36,7 @@ namespace LegeDoos.LDM
         public String Sender { get; set; }
         public String Description { get; set; }
         public String Tags { get; set; }
+        public bool DoubleSided { get; set; }
         public List<TheFile> FileList { get; set; }
         public Boolean UnSaved { get; set; }
         public static XmlSerializer xs;
@@ -61,6 +62,7 @@ namespace LegeDoos.LDM
             Category = string.Empty;
             Sender = string.Empty;
             CreatedDateYYYYMMDD = string.Empty;
+            DoubleSided = false;
         }
 
         /// <summary>
@@ -91,7 +93,7 @@ namespace LegeDoos.LDM
         /// Validate the document
         /// </summary>
         /// <returns>True if validation is successfull</returns>
-        private bool Validate()
+        private bool Validate(List<TheFile> _fileList)
         {
             bool retVal = true;
             
@@ -106,6 +108,12 @@ namespace LegeDoos.LDM
                 MessageBox.Show("Date has incorrect length");
                 retVal = false;
             }
+
+            if (retVal && DoubleSided && _fileList.Count % 2 == 1)
+            {
+                MessageBox.Show("You can only add an even number of files to a double sided document");
+                retVal = false;
+            }
             return retVal;
         }
 
@@ -117,7 +125,7 @@ namespace LegeDoos.LDM
         internal bool Save(List<TheFile> _fileList)
         {
             bool retVal = true;
-            if (Validate() && _fileList != null)
+            if (Validate(_fileList) && _fileList != null)
             {
                 if (UnSaved)
                 {
@@ -261,12 +269,39 @@ namespace LegeDoos.LDM
         private void SetFilePoperties()
         {
             int i = 1;
+            int count = 0;
+            if (FileList != null)
+                count = FileList.Count;
+            int front = 1;
+            int back = count;
+            int destNumber;
+            int half;
 
             foreach (TheFile f in FileList.OrderBy(f => f.CreatedDateTime))
             {
-                //todo: handle double sided docs
-                
-                f.DestFileNumber = i;
+                //handle double sided docs
+                if (DoubleSided && count % 2 == 0) //must be even number
+                {
+                    half = count/2;
+                    if (i <= half)
+                    {
+                        //fronts
+                        destNumber = front;
+                        front += 2;
+                    }
+                    else
+                    {
+                        //backs
+                        destNumber = back;
+                        back -= 2;
+                    }
+                }
+                else
+                {
+                    destNumber = i;
+                }
+
+                f.DestFileNumber = destNumber;
                 f.DestFileName = string.Format("{0}-{1}{2}", DocumentName, f.DestFileNumberStrPad(), f.SourceExtension);
                 i++;
             }
