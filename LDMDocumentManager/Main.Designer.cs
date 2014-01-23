@@ -57,6 +57,7 @@
             this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
             this.panelActionsSelected = new System.Windows.Forms.Panel();
             this.panelDocumentInfo = new System.Windows.Forms.Panel();
+            this.checkBoxDoubleSided = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.textBoxDocumentTags = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
-            this.checkBoxDoubleSided = new System.Windows.Forms.CheckBox();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -306,6 +306,13 @@
             resources.ApplyResources(this.panelDocumentInfo, "panelDocumentInfo");
             this.panelDocumentInfo.Name = "panelDocumentInfo";
             // 
+            // checkBoxDoubleSided
+            // 
+            resources.ApplyResources(this.checkBoxDoubleSided, "checkBoxDoubleSided");
+            this.checkBoxDoubleSided.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.documentBindingSource, "DoubleSided", true));
+            this.checkBoxDoubleSided.Name = "checkBoxDoubleSided";
+            this.checkBoxDoubleSided.UseVisualStyleBackColor = true;
+            // 
             // btnDelete
             // 
             resources.ApplyResources(this.btnDelete, "btnDelete");
@@ -406,13 +413,6 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
-            // checkBoxDoubleSided
-            // 
-            resources.ApplyResources(this.checkBoxDoubleSided, "checkBoxDoubleSided");
-            this.checkBoxDoubleSided.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.documentBindingSource, "DoubleSided", true));
-            this.checkBoxDoubleSided.Name = "checkBoxDoubleSided";
-            this.checkBoxDoubleSided.UseVisualStyleBackColor = true;
-            // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -435,9 +435,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanelBack);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanelBack.ResumeLayout(false);

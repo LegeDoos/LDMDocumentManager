@@ -78,7 +78,7 @@ namespace LDM
         private void loadImage()
         {
             string fileNameLocal = string.Empty;
-            
+
             if (m_FileManager.SelectedFiles != null && (m_ImageIndex >= 0 && m_ImageIndex < m_FileManager.SelectedFiles.Count))
             {
                 pictureBoxPreview.Image = m_FileManager.SelectedFiles[m_ImageIndex].Image();
@@ -102,11 +102,11 @@ namespace LDM
             {
                 Document current = m_FileManager.CurrentDocument;
                 documentBindingSource.DataSource = current;
-                
+
                 textBoxDocumentCategory.Text = current.Category;
                 textBoxDocumentDate.Text = current.CreatedDateYYYYMMDD;
                 textBoxDocumentDescription.Text = current.Description;
-                }
+            }
         }
 
         private void btnRotate_Click(object sender, EventArgs e)
@@ -157,5 +157,62 @@ namespace LDM
             m_FileManager.ProcessDocuments();
         }
 
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            //handle arrow down and up
+            if (!dataGridViewFileList.Focused &&
+                    (textBoxDocumentDate.Focused || textBoxSender.Focused || textBoxDocumentCategory.Focused || textBoxDocumentDescription.Focused || textBoxDocumentTags.Focused
+                        || checkBoxDoubleSided.Focused || btnApply.Focused || btnDelete.Focused))
+            {
+                if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+                {
+                    //set focus
+                    
+                    if (GridSelectNextRow(e.KeyCode == Keys.Up))
+                        dataGridViewFileList.Focus();
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Tab)
+                {
+                    //todo: keep selecttion
+                    textBoxDocumentDate.Focus();
+                }
+            }
+
+        }
+
+        private bool GridSelectNextRow(Boolean previous = false)
+        {
+            int CurrentRow;
+            bool retVal = false;
+
+            if (dataGridViewFileList.CurrentRow == null)
+                return retVal;
+            
+            CurrentRow = dataGridViewFileList.CurrentRow.Index;
+
+            if (previous)
+            {
+                if (CurrentRow > 0)
+                {
+                    dataGridViewFileList.CurrentCell = dataGridViewFileList[1, --CurrentRow];
+                    retVal = true;
+                }
+            }
+            else
+            {
+                if (CurrentRow < dataGridViewFileList.RowCount - 1)
+                {
+                    dataGridViewFileList.CurrentCell = dataGridViewFileList[1, ++CurrentRow];
+                    retVal = true;
+                }
+            }
+
+            return retVal;
+        }
     }
 }
