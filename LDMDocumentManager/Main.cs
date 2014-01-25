@@ -178,13 +178,18 @@ namespace LDM
             {
                 if (e.KeyCode == Keys.Tab)
                 {
-                    //todo: keep selecttion
+                    e.Handled = true;
                     textBoxDocumentDate.Focus();
                 }
             }
 
         }
 
+        /// <summary>
+        /// Select the next or the previous row in the grid
+        /// </summary>
+        /// <param name="previous">True if you want to select the previous row</param>
+        /// <returns></returns>
         private bool GridSelectNextRow(Boolean previous = false)
         {
             int CurrentRow;

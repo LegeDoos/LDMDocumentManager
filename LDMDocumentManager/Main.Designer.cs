@@ -440,7 +440,6 @@
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanelBack.ResumeLayout(false);
