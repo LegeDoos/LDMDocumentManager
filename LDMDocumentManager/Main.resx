@@ -423,7 +423,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStripPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 25</value>
+    <value>657, 25</value>
   </data>
   <data name="toolStripPreview.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -453,7 +453,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 609</value>
+    <value>657, 609</value>
   </data>
   <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -473,6 +473,38 @@
   <data name="&gt;&gt;pictureBoxPreview.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="axAcroPDF.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="axAcroPDF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 28</value>
+  </data>
+  <data name="axAcroPDF.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAAwAAAAACgAA2BMAANgTAAAL
+</value>
+  </data>
+  <data name="axAcroPDF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 359</value>
+  </data>
+  <data name="axAcroPDF.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;axAcroPDF.Name" xml:space="preserve">
+    <value>axAcroPDF</value>
+  </data>
+  <data name="&gt;&gt;axAcroPDF.Type" xml:space="preserve">
+    <value>AxAcroPDFLib.AxAcroPDF, AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;axAcroPDF.Parent" xml:space="preserve">
+    <value>panelImagePreview</value>
+  </data>
+  <data name="&gt;&gt;axAcroPDF.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="panelImagePreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -480,7 +512,7 @@
     <value>449, 4</value>
   </data>
   <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 609</value>
+    <value>657, 609</value>
   </data>
   <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -504,7 +536,7 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 612</value>
+    <value>103, 612</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 1</value>
@@ -954,7 +986,7 @@
     <value>3, 3</value>
   </data>
   <data name="panelDocumentInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 603</value>
+    <value>300, 603</value>
   </data>
   <data name="panelDocumentInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -975,13 +1007,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1115, 4</value>
+    <value>1113, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 609</value>
+    <value>306, 609</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1029,7 +1061,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,310" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,312" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveDocuments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2841,9 +2873,6 @@
         //z8Bw///////PgPD//////88B8P//////zgPw///////MB/B//////8gP8D//////wB/wAAAAAAAAP/
         AAAAAAAAB/+AAAAAAAAP/8AAAAAAAB///////////////////////w==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>LDM Document Manager</value>

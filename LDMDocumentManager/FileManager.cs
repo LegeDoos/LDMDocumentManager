@@ -154,8 +154,8 @@ namespace LegeDoos.LDM
                 if (Directory.Exists(GlobalSettings.theSettings.SourcePath))
                     FileDialog.InitialDirectory = GlobalSettings.theSettings.SourcePath;
                 */
-                FileDialog.Filter = "Images jpg|*.jpg|Images jpeg|*.jpeg|All files|*.*";
-                FileDialog.FilterIndex = 1;
+                FileDialog.Filter = GlobalSettings.theSettings.OpenDialogFilterSupportedFiles;
+                FileDialog.FilterIndex = GlobalSettings.theSettings.SupportedFileTypes.Count + 1; //set to all supported
                 FileDialog.Multiselect = true;
                 //FileDialog.CheckFileExists = true;
                 FileDialog.AddExtension = true;

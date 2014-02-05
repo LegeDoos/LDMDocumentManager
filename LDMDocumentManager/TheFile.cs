@@ -27,7 +27,7 @@ namespace LegeDoos.LDM
         {
             if (!Init(FileName))
             {
-                throw new Exception(string.Format("File {0} not found", FileName));
+                throw new Exception(string.Format("File {0} not found or not supported", FileName));
             }
         }
 
@@ -37,13 +37,24 @@ namespace LegeDoos.LDM
 
         private Boolean Init(string FileName)
         {
-            if (File.Exists(FileName))
+            if (File.Exists(FileName) && FileFormatSupported(FileName))
             {
                 SourcePathAndFileName = FileName;
                 LoadFileProperties();
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Check if the file is supported
+        /// </summary>
+        /// <param name="FileName"></param>
+        /// <returns></returns>
+        private bool FileFormatSupported(string FileName)
+        {
+            string ext = Path.GetExtension(FileName).Substring(1).ToLower(); //get rid of dot
+            return GlobalSettings.theSettings.SupportedFileTypes.ContainsKey(ext);            
         }
 
         private void LoadFileProperties()
@@ -60,6 +71,8 @@ namespace LegeDoos.LDM
             get
             {
                 int dateFromFileName = 0;
+                if (SourceFileName.Length <= 8)
+                    return string.Empty;
                 bool isNumeric = int.TryParse(SourceFileName.Substring(0, 8), out dateFromFileName);
                 return isNumeric ? dateFromFileName.ToString() : string.Empty;
             }
@@ -111,17 +124,22 @@ namespace LegeDoos.LDM
         /// <returns></returns>
         public Image Image()
         {
-            //make thread safe
             lock (ImageLock)
             {
-                if (!Isimage && File.Exists(SourcePathAndFileName))
+                if (!Isimage && GlobalSettings.theSettings.SupportedImageFileTypes.Contains(SourceExtension.Substring(1).ToLower()) && File.Exists(SourcePathAndFileName))
                 {
-                    using (var fs = new System.IO.FileStream(SourcePathAndFileName, System.IO.FileMode.Open))
+                    try
                     {
-                        var bmp = new Bitmap(fs);
-                        m_Image = (Bitmap)bmp.Clone();
-                        bmp.Dispose();
-                        Isimage = true;
+                        using (var fs = new System.IO.FileStream(SourcePathAndFileName, System.IO.FileMode.Open))
+                        {
+                            var bmp = new Bitmap(fs);
+                            m_Image = (Bitmap)bmp.Clone();
+                            bmp.Dispose();
+                            Isimage = true;
+                        }
+                    }
+                    catch
+                    {
                     }
                 }
             }

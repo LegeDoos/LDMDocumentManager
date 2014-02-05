@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,8 @@ namespace LegeDoos.LDM
     public class GlobalSettings
     {
         public string SourcePath { get; set; }
-        public string DestPath {  get;  set; }
-        public string LastStaticDate {  get;  set; }
+        public string DestPath { get; set; }
+        public string LastStaticDate { get; set; }
         public bool DisableImageCache { get; set; }
         private const string SettingsFolderRelative = "LDMSettings";
         public string SettingsFolder
@@ -23,8 +24,36 @@ namespace LegeDoos.LDM
                 return Path.Combine(DestPath, SettingsFolderRelative);
             }
         }
-        private static GlobalSettings m_globalSettings =  null;
 
+        public readonly Dictionary<string, string> SupportedFileTypes = new Dictionary<string, string>
+        {
+            { "pdf", "PDF" },
+            { "jpg", "Images jpg" },
+            { "jpeg", "Images jpeg" },
+            { "gif", "Images gif" },
+            { "png", "Images png" }
+        };
+        public readonly List<string> SupportedImageFileTypes = new List<string>
+        {
+            {"jpg"}, {"jpeg"}, {"gif"}, {"png"}
+        };
+        public string OpenDialogFilterSupportedFiles
+        {
+            get
+            {
+                string retVal = string.Empty;
+                string allSupported = string.Empty;
+                foreach (KeyValuePair<string, string> fileType in GlobalSettings.theSettings.SupportedFileTypes.OrderBy(f => f.Key))
+                {
+                    allSupported = string.Format("{0}*.{1};", allSupported, fileType.Key);
+                    retVal = string.Format("{0}{1}|*.{2}|", retVal, fileType.Value, fileType.Key);
+                }
+                retVal = string.Format("{0}All supported files|{1}", retVal, allSupported.Substring(0, allSupported.Length-1));
+                return retVal;
+            }
+        }
+
+        private static GlobalSettings m_globalSettings = null;
         public GlobalSettings()
         {
             ReloadSettings();
@@ -32,7 +61,7 @@ namespace LegeDoos.LDM
 
         public static GlobalSettings theSettings
         {
-            get 
+            get
             {
                 if (m_globalSettings == null)
                     m_globalSettings = new GlobalSettings();
@@ -65,4 +94,4 @@ namespace LegeDoos.LDM
             this.ReloadSettings();
         }
     }
-}
+} 

@@ -75,6 +75,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
+            this.axAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -89,6 +90,7 @@
             this.tableLayoutRight.SuspendLayout();
             this.panelDocumentInfo.SuspendLayout();
             this.panelActionsAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -214,6 +216,7 @@
             // 
             this.panelImagePreview.Controls.Add(this.toolStripPreview);
             this.panelImagePreview.Controls.Add(this.pictureBoxPreview);
+            this.panelImagePreview.Controls.Add(this.axAcroPDF);
             resources.ApplyResources(this.panelImagePreview, "panelImagePreview");
             this.panelImagePreview.Name = "panelImagePreview";
             // 
@@ -413,6 +416,13 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
+            // axAcroPDF
+            // 
+            resources.ApplyResources(this.axAcroPDF, "axAcroPDF");
+            this.axAcroPDF.Name = "axAcroPDF";
+            this.axAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF.OcxState")));
+            this.axAcroPDF.TabStop = false;
+            // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -455,6 +465,7 @@
             this.panelDocumentInfo.ResumeLayout(false);
             this.panelDocumentInfo.PerformLayout();
             this.panelActionsAll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -515,6 +526,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.CheckBox checkBoxDoubleSided;
+        private AxAcroPDFLib.AxAcroPDF axAcroPDF;
     
     }
 }

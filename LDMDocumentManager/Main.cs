@@ -69,26 +69,42 @@ namespace LDM
         private void resetImage()
         {
             m_ImageIndex = 0;
-            loadImage();
+            loadPreview();
         }
 
         /// <summary>
         /// Load the image of the main selected item
         /// </summary>
-        private void loadImage()
+        private void loadPreview()
         {
             string fileNameLocal = string.Empty;
+            bool isPDF;
 
             if (m_FileManager.SelectedFiles != null && (m_ImageIndex >= 0 && m_ImageIndex < m_FileManager.SelectedFiles.Count))
             {
-                pictureBoxPreview.Image = m_FileManager.SelectedFiles[m_ImageIndex].Image();
-                if (pictureBoxPreview.Image != null)
+                pictureBoxPreview.Image = m_FileManager.SelectedFiles[m_ImageIndex].Image(); //this will set image to null if there is no image
+                
+                isPDF = m_FileManager.SelectedFiles[m_ImageIndex].SourceExtension.Substring(1).ToLower() == "pdf";
+              
+                if (isPDF && File.Exists(m_FileManager.SelectedFiles[m_ImageIndex].SourcePathAndFileName))
                 {
-                    labelImageName.Text = string.Format("Preview of: {0}", m_FileManager.SelectedFiles[m_ImageIndex].SourceFileName);
-                    labelImageName.Visible = true;
+                    axAcroPDF.LoadFile(m_FileManager.SelectedFiles[m_ImageIndex].SourcePathAndFileName);
+                    textBoxDocumentDate.Focus();
+                    //dataGridViewFileList.Focus();
                 }
-                else
-                    labelImageName.Visible = false;
+                
+                //init controls
+                pictureBoxPreview.Visible = !isPDF;
+                axAcroPDF.Visible = isPDF;
+                pictureBoxPreview.Dock = isPDF ? DockStyle.None : DockStyle.Fill;
+                axAcroPDF.Dock = isPDF ? DockStyle.Fill : DockStyle.None;
+                btnRotate.Visible = !isPDF;
+                checkBoxDoubleSided.Enabled = !isPDF;
+
+                //preview name
+                labelImageName.Text = string.Format("Preview of: {0}", m_FileManager.SelectedFiles[m_ImageIndex].SourceFileName);
+                labelImageName.Visible = true;
+              
             }
             else
             {
@@ -134,7 +150,7 @@ namespace LDM
             if (m_FileManager.SelectedFiles != null && m_FileManager.SelectedFiles.Count > 0 && m_ImageIndex > 0)
             {
                 m_ImageIndex--;
-                loadImage();
+                loadPreview();
             }
         }
 
@@ -143,7 +159,7 @@ namespace LDM
             if (m_FileManager.SelectedFiles != null && m_FileManager.SelectedFiles.Count > 0 && m_ImageIndex < m_FileManager.SelectedFiles.Count - 1)
             {
                 m_ImageIndex++;
-                loadImage();
+                loadPreview();
             }
         }
 
