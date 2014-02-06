@@ -30,8 +30,8 @@
     <SupportUrl>http://ldm.legedoos.nl</SupportUrl>
     <ProductName>LDM Document Manager</ProductName>
     <PublisherName>Rob Cilissen</PublisherName>
-    <ApplicationRevision>18</ApplicationRevision>
-    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
