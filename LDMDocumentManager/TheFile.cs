@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using LegeDoos.Utils;
+using System.Windows.Forms;
 
 namespace LegeDoos.LDM
 {
@@ -21,6 +22,7 @@ namespace LegeDoos.LDM
         public int DestFileNumber { get; set; }
         private Image m_Image;
         private Boolean Isimage { get; set; }
+        private Boolean ImageFail { get; set; }
         private Object ImageLock = new Object();
 
         public TheFile(string FileName)
@@ -101,7 +103,7 @@ namespace LegeDoos.LDM
         internal void DeleteSource(string DestinationFolder)
         {
             File.Delete(SourcePathAndFileName);
-            m_Image.Dispose();
+            ClearImage();            
         }
 
         internal void Move(string DestinationFolder)
@@ -126,7 +128,7 @@ namespace LegeDoos.LDM
         {
             lock (ImageLock)
             {
-                if (!Isimage && GlobalSettings.theSettings.SupportedImageFileTypes.Contains(SourceExtension.Substring(1).ToLower()) && File.Exists(SourcePathAndFileName))
+                if (!Isimage && !ImageFail && GlobalSettings.theSettings.SupportedImageFileTypes.Contains(SourceExtension.Substring(1).ToLower()) && File.Exists(SourcePathAndFileName))
                 {
                     try
                     {
@@ -140,6 +142,8 @@ namespace LegeDoos.LDM
                     }
                     catch
                     {
+                        ImageFail = true;
+                        MessageBox.Show(String.Format("Can't load image file {0}", SourcePathAndFileName));
                     }
                 }
             }
@@ -147,11 +151,12 @@ namespace LegeDoos.LDM
         }
 
         /// <summary>
-        /// Clear the image and fre memory
+        /// Clear the image and free memory
         /// </summary>
         public void ClearImage()
         {
-            m_Image.Dispose();
+            if (m_Image != null)
+                m_Image.Dispose();
             m_Image = null;
             Isimage = false;
         }
