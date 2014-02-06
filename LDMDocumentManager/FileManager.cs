@@ -293,7 +293,7 @@ namespace LegeDoos.LDM
                 DataGridViewRow row = m_FileListDataGridView.Rows[e.RowIndex];
                 
                 TheFile FileLocal;
-                FileLocal = TheFileList.FirstOrDefault(f => f.SourceFileName == row.Cells[0].Value);
+                FileLocal = TheFileList.FirstOrDefault(f => f.SourceFileName == row.Cells[0].Value.ToString());
 
                 Document documentLocal;
                 documentLocal = getDocumentForFile(FileLocal);
