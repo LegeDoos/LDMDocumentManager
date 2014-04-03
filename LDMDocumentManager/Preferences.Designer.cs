@@ -41,13 +41,15 @@
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.foooterPanel = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.foldersPanel = new System.Windows.Forms.Panel();
             this.lastStaticDatePanel = new System.Windows.Forms.Panel();
+            this.foldersPanel = new System.Windows.Forms.Panel();
+            this.btnDestDlg = new System.Windows.Forms.Button();
+            this.btnSrcDlg = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.foooterPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
-            this.foldersPanel.SuspendLayout();
             this.lastStaticDatePanel.SuspendLayout();
+            this.foldersPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // FoldersLabel
@@ -86,6 +88,7 @@
             this.LastStaticDateLabel.Size = new System.Drawing.Size(79, 13);
             this.LastStaticDateLabel.TabIndex = 4;
             this.LastStaticDateLabel.Text = "Last static date";
+            this.LastStaticDateLabel.Visible = false;
             // 
             // CancelButton
             // 
@@ -105,13 +108,14 @@
             this.StaticDateTextBox.Size = new System.Drawing.Size(155, 20);
             this.StaticDateTextBox.TabIndex = 3;
             this.StaticDateTextBox.Text = global::LegeDoos.LDM.Properties.Settings.Default.LastStaticDate;
+            this.StaticDateTextBox.Visible = false;
             // 
             // DestinationPathTextBox
             // 
             this.DestinationPathTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LegeDoos.LDM.Properties.Settings.Default, "DestinationPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DestinationPathTextBox.Location = new System.Drawing.Point(135, 78);
             this.DestinationPathTextBox.Name = "DestinationPathTextBox";
-            this.DestinationPathTextBox.Size = new System.Drawing.Size(155, 20);
+            this.DestinationPathTextBox.Size = new System.Drawing.Size(135, 20);
             this.DestinationPathTextBox.TabIndex = 2;
             this.DestinationPathTextBox.Text = global::LegeDoos.LDM.Properties.Settings.Default.DestinationPath;
             // 
@@ -130,7 +134,7 @@
             this.SourceDocsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::LegeDoos.LDM.Properties.Settings.Default, "SourcePath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.SourceDocsTextBox.Location = new System.Drawing.Point(135, 51);
             this.SourceDocsTextBox.Name = "SourceDocsTextBox";
-            this.SourceDocsTextBox.Size = new System.Drawing.Size(155, 20);
+            this.SourceDocsTextBox.Size = new System.Drawing.Size(135, 20);
             this.SourceDocsTextBox.TabIndex = 1;
             this.SourceDocsTextBox.Text = global::LegeDoos.LDM.Properties.Settings.Default.SourcePath;
             // 
@@ -149,7 +153,6 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(315, 274);
             this.tableLayoutPanel.TabIndex = 6;
-            this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // foooterPanel
             // 
@@ -171,9 +174,21 @@
             this.contentPanel.Size = new System.Drawing.Size(309, 218);
             this.contentPanel.TabIndex = 2;
             // 
+            // lastStaticDatePanel
+            // 
+            this.lastStaticDatePanel.Controls.Add(this.StaticDateTextBox);
+            this.lastStaticDatePanel.Controls.Add(this.LastStaticDateLabel);
+            this.lastStaticDatePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lastStaticDatePanel.Location = new System.Drawing.Point(0, 118);
+            this.lastStaticDatePanel.Name = "lastStaticDatePanel";
+            this.lastStaticDatePanel.Size = new System.Drawing.Size(309, 100);
+            this.lastStaticDatePanel.TabIndex = 1;
+            // 
             // foldersPanel
             // 
             this.foldersPanel.AccessibleName = "";
+            this.foldersPanel.Controls.Add(this.btnDestDlg);
+            this.foldersPanel.Controls.Add(this.btnSrcDlg);
             this.foldersPanel.Controls.Add(this.FoldersLabel);
             this.foldersPanel.Controls.Add(this.SourceDocsLabel);
             this.foldersPanel.Controls.Add(this.DestinationPathLabel);
@@ -185,15 +200,27 @@
             this.foldersPanel.Size = new System.Drawing.Size(309, 218);
             this.foldersPanel.TabIndex = 0;
             // 
-            // lastStaticDatePanel
+            // btnDestDlg
             // 
-            this.lastStaticDatePanel.Controls.Add(this.StaticDateTextBox);
-            this.lastStaticDatePanel.Controls.Add(this.LastStaticDateLabel);
-            this.lastStaticDatePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lastStaticDatePanel.Location = new System.Drawing.Point(0, 118);
-            this.lastStaticDatePanel.Name = "lastStaticDatePanel";
-            this.lastStaticDatePanel.Size = new System.Drawing.Size(309, 100);
-            this.lastStaticDatePanel.TabIndex = 1;
+            this.btnDestDlg.BackgroundImage = global::LegeDoos.LDM.Properties.Resources.folder_icon;
+            this.btnDestDlg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDestDlg.Location = new System.Drawing.Point(276, 75);
+            this.btnDestDlg.Name = "btnDestDlg";
+            this.btnDestDlg.Size = new System.Drawing.Size(24, 25);
+            this.btnDestDlg.TabIndex = 3;
+            this.btnDestDlg.UseVisualStyleBackColor = true;
+            this.btnDestDlg.Click += new System.EventHandler(this.btnDestDlg_Click);
+            // 
+            // btnSrcDlg
+            // 
+            this.btnSrcDlg.BackgroundImage = global::LegeDoos.LDM.Properties.Resources.folder_icon;
+            this.btnSrcDlg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSrcDlg.Location = new System.Drawing.Point(276, 48);
+            this.btnSrcDlg.Name = "btnSrcDlg";
+            this.btnSrcDlg.Size = new System.Drawing.Size(24, 25);
+            this.btnSrcDlg.TabIndex = 3;
+            this.btnSrcDlg.UseVisualStyleBackColor = true;
+            this.btnSrcDlg.Click += new System.EventHandler(this.btnSrcDlg_Click);
             // 
             // Preferences
             // 
@@ -208,10 +235,10 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.foooterPanel.ResumeLayout(false);
             this.contentPanel.ResumeLayout(false);
-            this.foldersPanel.ResumeLayout(false);
-            this.foldersPanel.PerformLayout();
             this.lastStaticDatePanel.ResumeLayout(false);
             this.lastStaticDatePanel.PerformLayout();
+            this.foldersPanel.ResumeLayout(false);
+            this.foldersPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -233,6 +260,8 @@
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel lastStaticDatePanel;
         private System.Windows.Forms.Panel foldersPanel;
+        private System.Windows.Forms.Button btnSrcDlg;
+        private System.Windows.Forms.Button btnDestDlg;
 
 
     }

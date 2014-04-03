@@ -23,10 +23,24 @@ namespace LegeDoos.LDM
             this.Close();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnSrcDlg_Click(object sender, EventArgs e)
         {
-
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                SourceDocsTextBox.Text = dlg.SelectedPath;
+            }
         }
+
+        private void btnDestDlg_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                DestinationPathTextBox.Text = dlg.SelectedPath;
+            }
+        }
+
 
     }
 }
