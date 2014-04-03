@@ -21,6 +21,7 @@ namespace LegeDoos.LDM
         public TheFile MainSelectedFile { get; private set; }
         public Document CurrentDocument { get; set; }
         private List<Document> DocumentList = null;
+        public AutoCompleteStringCollection SendersAutoCompleteCollection { get; private set; }
 
         public event MainSelectedFileChange MainSelectedFileChangeEvent;
         public event CurrentDocumentChange CurrentDocumentChange;
@@ -51,6 +52,8 @@ namespace LegeDoos.LDM
             DocumentList = new List<Document>();
             CurrentDocument = getNewDocument();
             InitNumberSequenceManager();
+            SendersAutoCompleteCollection = new AutoCompleteStringCollection();
+            this.ReloadSendersAutoComplete();
         }
 
         private void InitNumberSequenceManager()
@@ -270,6 +273,11 @@ namespace LegeDoos.LDM
             //refresh datagrid (colors for items with document
             m_FileListDataGridView.Refresh();
 
+            //add to senders autocompletion collection
+            if (SendersAutoCompleteCollection != null && !SendersAutoCompleteCollection.Contains(CurrentDocument.Sender))
+            {
+                SendersAutoCompleteCollection.Add(CurrentDocument.Sender);
+            }
         }
 
         internal void DeleteDocument()
@@ -343,6 +351,26 @@ namespace LegeDoos.LDM
             
             //reload grid
             InitGridView();
+        }
+
+        /// <summary>
+        /// Create the auto complete collection for the senders textbox
+        /// </summary>
+        internal void ReloadSendersAutoComplete()
+        {
+            if (SendersAutoCompleteCollection == null)
+                return;
+
+            SendersAutoCompleteCollection.Clear();
+
+            //add dirs
+            if (Directory.Exists(GlobalSettings.theSettings.DestPath))
+            {
+                foreach (string dir in Directory.GetDirectories(GlobalSettings.theSettings.DestPath))
+                {
+                    SendersAutoCompleteCollection.Add(new DirectoryInfo(dir).Name.Replace('_', ' '));
+                }
+            }
         }
     }
 }

@@ -54,6 +54,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.labelImageName = new System.Windows.Forms.ToolStripLabel();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.axAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.tableLayoutRight = new System.Windows.Forms.TableLayoutPanel();
             this.panelActionsSelected = new System.Windows.Forms.Panel();
             this.panelDocumentInfo = new System.Windows.Forms.Panel();
@@ -75,7 +76,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActionsAll = new System.Windows.Forms.Panel();
             this.btnSaveDocuments = new System.Windows.Forms.Button();
-            this.axAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,10 +87,10 @@
             this.panelImagePreview.SuspendLayout();
             this.toolStripPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).BeginInit();
             this.tableLayoutRight.SuspendLayout();
             this.panelDocumentInfo.SuspendLayout();
             this.panelActionsAll.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -275,6 +275,13 @@
             this.pictureBoxPreview.Name = "pictureBoxPreview";
             this.pictureBoxPreview.TabStop = false;
             // 
+            // axAcroPDF
+            // 
+            resources.ApplyResources(this.axAcroPDF, "axAcroPDF");
+            this.axAcroPDF.Name = "axAcroPDF";
+            this.axAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF.OcxState")));
+            this.axAcroPDF.TabStop = false;
+            // 
             // tableLayoutRight
             // 
             resources.ApplyResources(this.tableLayoutRight, "tableLayoutRight");
@@ -416,13 +423,6 @@
             this.btnSaveDocuments.UseVisualStyleBackColor = true;
             this.btnSaveDocuments.Click += new System.EventHandler(this.btnSaveDocuments_Click);
             // 
-            // axAcroPDF
-            // 
-            resources.ApplyResources(this.axAcroPDF, "axAcroPDF");
-            this.axAcroPDF.Name = "axAcroPDF";
-            this.axAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF.OcxState")));
-            this.axAcroPDF.TabStop = false;
-            // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -461,11 +461,11 @@
             this.toolStripPreview.ResumeLayout(false);
             this.toolStripPreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).EndInit();
             this.tableLayoutRight.ResumeLayout(false);
             this.panelDocumentInfo.ResumeLayout(false);
             this.panelDocumentInfo.PerformLayout();
             this.panelActionsAll.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.theFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             this.ResumeLayout(false);

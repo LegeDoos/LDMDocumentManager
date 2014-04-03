@@ -26,11 +26,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://rawgithub.com/LegeDoos/ClickOnceInstallers/master/LDMDocumentManager/</InstallUrl>
+    <InstallUrl>http://legedoos.nl/installers/LDMDocumentManager/</InstallUrl>
     <SupportUrl>http://ldm.legedoos.nl</SupportUrl>
     <ProductName>LDM Document Manager</ProductName>
     <PublisherName>Rob Cilissen</PublisherName>
-    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

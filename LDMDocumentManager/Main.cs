@@ -30,7 +30,11 @@ namespace LDM
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            //set autocomplete options for textBoxSender
+            this.textBoxSender.AutoCompleteCustomSource = m_FileManager.SendersAutoCompleteCollection;
+            this.textBoxSender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxSender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+          
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

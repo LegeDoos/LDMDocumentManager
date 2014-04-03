@@ -423,7 +423,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStripPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 25</value>
+    <value>656, 25</value>
   </data>
   <data name="toolStripPreview.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -453,7 +453,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 609</value>
+    <value>656, 609</value>
   </data>
   <data name="pictureBoxPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -512,7 +512,7 @@
     <value>449, 4</value>
   </data>
   <data name="panelImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 609</value>
+    <value>656, 609</value>
   </data>
   <data name="panelImagePreview.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -536,7 +536,7 @@
     <value>Right</value>
   </data>
   <data name="panelActionsSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 612</value>
+    <value>104, 612</value>
   </data>
   <data name="panelActionsSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 1</value>
@@ -986,7 +986,7 @@
     <value>3, 3</value>
   </data>
   <data name="panelDocumentInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 603</value>
+    <value>301, 603</value>
   </data>
   <data name="panelDocumentInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1007,13 +1007,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1113, 4</value>
+    <value>1112, 4</value>
   </data>
   <data name="tableLayoutRight.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>306, 609</value>
+    <value>307, 609</value>
   </data>
   <data name="tableLayoutRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1061,7 +1061,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanelLeftRight.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,312" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanelFileList" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelImagePreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutRight" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,444,Percent,100,Absolute,313" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnSaveDocuments.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2873,6 +2873,9 @@
         //z8Bw///////PgPD//////88B8P//////zgPw///////MB/B//////8gP8D//////wB/wAAAAAAAAP/
         AAAAAAAAB/+AAAAAAAAP/8AAAAAAAB///////////////////////w==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>LDM Document Manager</value>
