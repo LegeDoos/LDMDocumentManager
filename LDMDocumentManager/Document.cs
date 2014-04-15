@@ -14,6 +14,7 @@ namespace LegeDoos.LDM
 {
     public class Document
     {
+       
         public Guid Id { get; set; }
         public Int64 DocumentNumber { get; set; }
         private string DocumentNumberAsString
