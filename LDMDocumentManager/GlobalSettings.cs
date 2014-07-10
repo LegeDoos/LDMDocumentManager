@@ -52,7 +52,6 @@ namespace LegeDoos.LDM
                 return retVal;
             }
         }
-
         private static GlobalSettings m_globalSettings = null;
         public GlobalSettings()
         {
